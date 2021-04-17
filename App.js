@@ -1,21 +1,65 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Profiler } from 'react';
+import { createStackNavigator, TransitionPresets, TransitionSpecs,View } from '@react-navigation/stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { NavigationContainer } from '@react-navigation/native';
+import * as Font from 'expo-font'
+import Load from "./src/screen/Load";
+import Start from './src/screen/Start';
+
+
+import Login from './src/screen/Login';
+
+
+
+
+
+
+ 
+const Stack = createStackNavigator();
+
+class App extends React.Component {
+
+  // state = {
+  //   fontsLoaded: false
+  // }
+
+  // async componentDidMount() {
+  //   await Font.loadAsync({
+     
+  //     Poppins: require('./assets/font/Poppins-Light.ttf'),
+      
+
+  //   });
+  //   this.setState({ fontsLoaded: true });
+  // }
+
+
+  render() {
+    return (
+      // this.state.fontsLoaded ?
+     
+        <NavigationContainer>
+
+          <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
+            initialRouteName="Login"    headerMode='none' >
+             
+             <Stack.Screen name="Load" component={Load}/>
+             <Stack.Screen name="Start" component={Start}/>
+             <Stack.Screen name="Login" component={Login} />
+           
+            {/* <Stack.Screen name="Rapp" component={Rapp}/> */}
+           
+
+          </Stack.Navigator>
+
+        </NavigationContainer>
+          
+        
+        // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        //   <ActivityIndicator size='large' color='red' />
+        //   <Text>Font is loading</Text>
+        // </View>
+        );
+      }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
