@@ -1,13 +1,14 @@
 import React, { Profiler } from 'react';
-import { createStackNavigator, TransitionPresets, TransitionSpecs,View } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets, TransitionSpecs,View ,ActivityIndicator,Text} from '@react-navigation/stack';
 
 import { NavigationContainer } from '@react-navigation/native';
-import * as Font from 'expo-font'
+// import * as Font from 'expo-font'
 import Load from "./src/screen/Load";
 import Start from './src/screen/Start';
-
-
 import Login from './src/screen/Login';
+import Registration from './src/screen/Registration';
+import Forgetpass from './src/screen/Forgetpass';
+import SuccessfulRegister from './src/screen/SuccessfulRegister';
 
 
 
@@ -26,7 +27,7 @@ class App extends React.Component {
   // async componentDidMount() {
   //   await Font.loadAsync({
      
-  //     Poppins: require('./assets/font/Poppins-Light.ttf'),
+  //     Poppins: require('./assets/fonts/Poppins-Light.ttf'),
       
 
   //   });
@@ -41,11 +42,15 @@ class App extends React.Component {
         <NavigationContainer>
 
           <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-            initialRouteName="Login"    headerMode='none' >
-             
-             <Stack.Screen name="Load" component={Load}/>
+               initialRouteName="Load"    headerMode='none' >
+               <Stack.Screen name="Load" component={Load}/>
              <Stack.Screen name="Start" component={Start}/>
              <Stack.Screen name="Login" component={Login} />
+             <Stack.Screen name="Registration" component={Registration} />
+             <Stack.Screen name="Forgetpass" component={Forgetpass} />
+             <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
+           
+            
            
             {/* <Stack.Screen name="Rapp" component={Rapp}/> */}
            
@@ -54,7 +59,7 @@ class App extends React.Component {
 
         </NavigationContainer>
           
-        
+        // :
         // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         //   <ActivityIndicator size='large' color='red' />
         //   <Text>Font is loading</Text>

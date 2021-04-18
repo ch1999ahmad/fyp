@@ -15,7 +15,7 @@ class LOogin extends React.Component {
     //     super();
     //     this.state = {
     //         text: '',
-    //         email: '',
+    //         email: '', 
     //         password: '',
     //     }
     // }
