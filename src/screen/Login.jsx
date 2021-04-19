@@ -33,8 +33,8 @@ const Login = ({navigation}) => {
                     <TouchableOpacity  onPress={() => navigation.navigate('Forgetpass')} style={{ paddingVertical: 8, alignSelf: 'flex-end',marginBottom:20 }}><Text style={{color:'#0000FF'}}>Forget Password</Text></TouchableOpacity>
                    </View>
                    <View style={{}}>
-                    <TouchableOpacity  style={styles.btn} >
-                     {/* onPress={() => navigation.navigate('Registration')} */}
+                    <TouchableOpacity  style={styles.btn} 
+                     onPress={() => navigation.navigate('Home')} >
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color:'#fff'}}>Login</Text>
                     </TouchableOpacity>
                     </View>

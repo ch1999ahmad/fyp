@@ -18,7 +18,7 @@ const Registration = ({ navigation }) => {
                 </View>
                 <View style={{paddingHorizontal:20}}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold', }}
-                    >Register Now</Text>
+                    >Signin Now</Text>
                     <Text style={{ color: 'black' }}>Enter your credentials to continue</Text>
                 </View>
                 <View style={{paddingHorizontal:20}}>
@@ -38,7 +38,7 @@ const Registration = ({ navigation }) => {
                     />
                     <Text style={{ fontSize: 15, color: 'black', paddingTop: 10, fontWeight: 'bold' }}>Confirm Password</Text>
                     <TextInput
-                        placeholder="Your Password"
+                        placeholder="Confirm Password"
                         style={styles.textinput}
                         autoCapitalize='none'
                         secureTextEntry={true}

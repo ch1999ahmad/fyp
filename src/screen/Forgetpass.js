@@ -113,7 +113,7 @@ const height_logo = height * 0.10;
             padding: 0, margin: 0,
            // fontFamily: 'Poppins',
             marginTop: 20,
-            color: "#97AABD",
+            color: "black",
             alignSelf: 'center',
             alignItems: 'flex-start',
             paddingHorizontal: 10

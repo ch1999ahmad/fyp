@@ -9,7 +9,7 @@ import Login from './src/screen/Login';
 import Registration from './src/screen/Registration';
 import Forgetpass from './src/screen/Forgetpass';
 import SuccessfulRegister from './src/screen/SuccessfulRegister';
-
+import Home from './src/screen/Home';
 
 
 
@@ -42,13 +42,14 @@ class App extends React.Component {
         <NavigationContainer>
 
           <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-               initialRouteName="Load"    headerMode='none' >
+               initialRouteName="Home"    headerMode='none' >
                <Stack.Screen name="Load" component={Load}/>
              <Stack.Screen name="Start" component={Start}/>
              <Stack.Screen name="Login" component={Login} />
              <Stack.Screen name="Registration" component={Registration} />
              <Stack.Screen name="Forgetpass" component={Forgetpass} />
              <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
+             <Stack.Screen name="Home" component={Home} />
            
             
            
