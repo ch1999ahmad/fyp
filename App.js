@@ -10,7 +10,7 @@ import Registration from './src/screen/Registration';
 import Forgetpass from './src/screen/Forgetpass';
 import SuccessfulRegister from './src/screen/SuccessfulRegister';
 import Home from './src/screen/Home';
-
+import Card from './src/component/Card';
 
 
 
@@ -50,6 +50,7 @@ class App extends React.Component {
              <Stack.Screen name="Forgetpass" component={Forgetpass} />
              <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
              <Stack.Screen name="Home" component={Home} />
+             <Stack.Screen name="Card" component={Card} />
            
             
            
