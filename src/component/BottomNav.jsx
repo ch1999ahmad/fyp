@@ -15,9 +15,9 @@ import { AntDesign } from '@expo/vector-icons';
 const BottomNav = () => {
     return (
 
-        <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:20}}>
+        <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:20,}}>
             <View style={styles.nav} >
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row', }}>
                     <TouchableOpacity >
                         <Entypo name="shop" size={24} color="black" />
                         <Text style={{ alignItems: 'center', color: 'black', }}>Shop</Text>
@@ -36,7 +36,7 @@ const BottomNav = () => {
                     <Text style={{ alignItems: 'center', color: 'black', }}>Favourite</Text>
                 </TouchableOpacity>
                 <TouchableOpacity >
-                    <MaterialCommunityIcons name="account-outline" size={24} color="black" />
+                    <MaterialCommunityIcons name="account-outline" size={24} color="black"/>
                     <Text style={{ alignItems: 'center', color: 'black', }}>Account</Text>
                 </TouchableOpacity>
             </View>
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
        // backgroundColor:'red',
        borderRadius:13,
+      
     }
 });
 
