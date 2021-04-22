@@ -5,7 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
-
+import CardSec from '../component/CardSec';
 const Home = () => {
     return (
 
@@ -79,13 +79,17 @@ const Home = () => {
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Groceries</Text>
                     <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                 </View>
-                <View style={{flexDirection: 'row',backgroundColor:'red', }}>
-                    
-                        <Image style={{ width: '50%',resizeMode:'contain',backgroundColor:'yellow' }}
-                            source={require('../../assets/pulses.png')} />
-                 <Text style={{ fontSize: 18, fontWeight: 'bold',alignSelf:'center' }} >pulses</Text>
-                    
-                </View>
+                <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <View style={{ paddingHorizontal: 10 }}>
+                    <CardSec />
+                    </View>
+                    <View style={{ paddingHorizontal: 10 }}>
+                    <CardSec />
+                    </View>
+                    <View style={{ paddingHorizontal: 10 }}>
+                    <CardSec />
+                    </View>
+                </ScrollView>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
                         <Card />

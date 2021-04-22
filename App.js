@@ -10,7 +10,7 @@ import Registration from './src/screen/Registration';
 import Forgetpass from './src/screen/Forgetpass';
 import SuccessfulRegister from './src/screen/SuccessfulRegister';
 import Home from './src/screen/Home';
-import Card from './src/component/Card';
+import Find from './src/screen/Find';
 
 
 
@@ -42,7 +42,7 @@ class App extends React.Component {
         <NavigationContainer>
 
           <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-               initialRouteName="Home"    headerMode='none' >
+               initialRouteName="Find"    headerMode='none' >
                <Stack.Screen name="Load" component={Load}/>
              <Stack.Screen name="Start" component={Start}/>
              <Stack.Screen name="Login" component={Login} />
@@ -50,7 +50,7 @@ class App extends React.Component {
              <Stack.Screen name="Forgetpass" component={Forgetpass} />
              <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
              <Stack.Screen name="Home" component={Home} />
-             <Stack.Screen name="Card" component={Card} />
+             <Stack.Screen name="Find" component={Find} />
            
             
            
