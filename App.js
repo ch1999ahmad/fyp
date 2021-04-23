@@ -11,8 +11,8 @@ import Forgetpass from './src/screen/Forgetpass';
 import SuccessfulRegister from './src/screen/SuccessfulRegister';
 import Home from './src/screen/Home';
 import Find from './src/screen/Find';
-
-
+import AddItem from './src/screen/AddItem';
+import Categories from './src/screen/Categories';
 
 
  
@@ -42,7 +42,7 @@ class App extends React.Component {
         <NavigationContainer>
 
           <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-               initialRouteName="Find"    headerMode='none' >
+               initialRouteName="AddItem"    headerMode='none' >
                <Stack.Screen name="Load" component={Load}/>
              <Stack.Screen name="Start" component={Start}/>
              <Stack.Screen name="Login" component={Login} />
@@ -51,6 +51,8 @@ class App extends React.Component {
              <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
              <Stack.Screen name="Home" component={Home} />
              <Stack.Screen name="Find" component={Find} />
+             <Stack.Screen name="AddItem" component={AddItem} />
+             <Stack.Screen name="Categories" component={Categories} />
            
             
            

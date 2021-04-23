@@ -2,7 +2,8 @@ import React from 'react'
 import { Animated, Dimensions, Image, View } from "react-native";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export const Carousal = ({ images, width, height, active, inActive }) => {
+
+export const Carousal = ({ images, width, height, active, inActive ,props }) => {
 
     const anim = new Animated.Value(0)
 
@@ -31,7 +32,7 @@ export const Carousal = ({ images, width, height, active, inActive }) => {
     const animate = (val) => {
         Animated.timing(anim, {
             toValue: val,
-            duration: 0,
+            duration: 0.5,
             useNativeDriver: false
         }).start()
     }
@@ -50,7 +51,7 @@ export const Carousal = ({ images, width, height, active, inActive }) => {
             >
                 {
                     images.map((img, index) =>
-                        <Image key={index}  source={img}  />
+                        <Image key={index}  source={img} style={{ width: totalWidth , }}  />
                     )
                 }
 

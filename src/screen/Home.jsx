@@ -12,11 +12,11 @@ const Home = () => {
         <View style={styles.container}>
             {/* <View style={{ borderRadius:13,flexDirection:"row",backgroundColor:'#f5f8fa', flex:0.25,  width: '90%', alignSelf: 'center', 
           alignItems:'center',paddingHorizonta:20}}> */}
-            <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 20, }}>
+            <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 40, }}>
                 <Image
                     source={require('../../assets/parrot.png')} />
             </View>
-            <ScrollView>
+            
                 <View style={styles.search}>
                     <AntDesign name="search1" size={20} color="black" />
                     <TextInput
@@ -24,6 +24,7 @@ const Home = () => {
                     </TextInput>
                     {/* </View> */}
                 </View>
+                <ScrollView>
                 <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 10 }}>
                     <Carousal active='#000' inActive='#D9D9D9' height={100} images={[require('../../assets/home.jpeg'), require('../../assets/home.jpeg'), require('../../assets/home.jpeg')]} />
 

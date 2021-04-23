@@ -8,7 +8,7 @@ const Find = () => {
     return (
         <View style={styles.container}>
 
-            <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 20 }}>
+            <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 40 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Find Products</Text>
             </View>
             <View style={styles.search}>
@@ -18,19 +18,19 @@ const Find = () => {
                 </TextInput>
             </View>
             <ScrollView>
-                <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
                 <Card />
                 <Card />
                 </View>
-                <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
                 <Card />
                 <Card />
                 </View>
-                <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
                 <Card />
                 <Card />
                 </View>
-                <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
                 <Card />
                 <Card />
                 </View>
