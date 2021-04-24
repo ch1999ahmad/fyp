@@ -13,7 +13,7 @@ import Home from './src/screen/Home';
 import Find from './src/screen/Find';
 import AddItem from './src/screen/AddItem';
 import Categories from './src/screen/Categories';
-
+import MyCart from './src/screen/MyCart';
 
  
 const Stack = createStackNavigator();
@@ -42,7 +42,7 @@ class App extends React.Component {
         <NavigationContainer>
 
           <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-               initialRouteName="AddItem"    headerMode='none' >
+               initialRouteName="MyCart"    headerMode='none' >
                <Stack.Screen name="Load" component={Load}/>
              <Stack.Screen name="Start" component={Start}/>
              <Stack.Screen name="Login" component={Login} />
@@ -53,6 +53,7 @@ class App extends React.Component {
              <Stack.Screen name="Find" component={Find} />
              <Stack.Screen name="AddItem" component={AddItem} />
              <Stack.Screen name="Categories" component={Categories} />
+             <Stack.Screen name="MyCart" component={MyCart} />
            
             
            
