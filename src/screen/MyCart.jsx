@@ -22,15 +22,12 @@ const MyCart = () => {
                 <CartCard />
                 <CartCard />
                 <CartCard />
-                <CartCard />
-                <CartCard />
-                <CartCard />
-                <CartCard />
+                
             </ScrollView>
                    <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:100,}}>
                 <TouchableOpacity style={{backgroundColor:"#59C32F",width:'160%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13, }}>
-                 <Text style={{fontSize:18,fontWeight:'bold',textAlign:'center'}}>Go to Checkout</Text>
+                 <Text style={{fontSize:18,fontWeight:'bold',textAlign:'center',color:"#fff"}}>Go to Checkout</Text>
                 </TouchableOpacity>
                 </View>
             <BottomNav/>

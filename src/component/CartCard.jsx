@@ -29,7 +29,7 @@ const CartCard = () => {
                 <View  style={{justifyContent:'space-around',}}>
                 <TouchableOpacity><Ionicons style={{alignSelf:'flex-end'}}
                      name="ios-close-outline" size={24} color="black" /></TouchableOpacity> 
-                    <Text style={{ fontSize: 20, fontWeight: 'bold', }}>$4.99</Text>
+                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>$4.99</Text>
                 </View>
 
             </View>
