@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
 import CardSec from '../component/CardSec';
-const Home = () => {
+const Home = (props,navigation) => {
     return (
 
         <View style={styles.container}>
@@ -107,7 +107,7 @@ const Home = () => {
                 </ScrollView>
 
             </ScrollView>
-            <BottomNav />
+            <BottomNav navigation={props.navigation}/>
         </View>
     );
 }

@@ -12,31 +12,32 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
-const BottomNav = () => {
+const BottomNav = (props) => {
     return (
 
-        <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:20,}}>
+        <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom: 20, }}>
             <View style={styles.nav} >
                 <View style={{ flexDirection: 'row', }}>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
                         <Entypo name="shop" size={24} color="black" />
                         <Text style={{ alignItems: 'center', color: 'black', }}>Shop</Text>
+
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
-                <AntDesign name="search1" size={24} color="black" />
+                <TouchableOpacity onPress={() => props.navigation.navigate('Find')} >
+                    <AntDesign name="search1" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Explore</Text>
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => props.navigation.navigate('MyCart')}>
                     <MaterialCommunityIcons name="cart-outline" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Cart</Text>
                 </TouchableOpacity>
-                <TouchableOpacity >
+                <TouchableOpacity  onPress={() => props.navigation.navigate('Favourite')}>
                     <FontAwesome5 name="heart" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Favourite</Text>
                 </TouchableOpacity>
                 <TouchableOpacity >
-                    <MaterialCommunityIcons name="account-outline" size={24} color="black"/>
+                    <MaterialCommunityIcons name="account-outline" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Account</Text>
                 </TouchableOpacity>
             </View>
@@ -60,12 +61,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         width: '100%',
         alignSelf: 'center',
-       // borderBottomLeftRadius: 13,
-       // borderBottomRightRadius: 13,
+        // borderBottomLeftRadius: 13,
+        // borderBottomRightRadius: 13,
         paddingVertical: 5,
-       // backgroundColor:'red',
-       borderRadius:13,
-      
+        // backgroundColor:'red',
+        borderRadius: 13,
+
     }
 });
 

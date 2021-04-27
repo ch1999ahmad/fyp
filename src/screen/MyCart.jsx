@@ -9,7 +9,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
-const MyCart = () => {
+const MyCart = (props) => {
     return (
         <View style={styles.container}>
             <View style={{ borderBottomWidth: 1, borderColor: '#E2E2E2' }}>
@@ -30,7 +30,7 @@ const MyCart = () => {
                  <Text style={{fontSize:18,fontWeight:'bold',textAlign:'center',color:"#fff"}}>Go to Checkout</Text>
                 </TouchableOpacity>
                 </View>
-            <BottomNav/>
+            <BottomNav navigation={props.navigation}/>
         </View>
     );
 };

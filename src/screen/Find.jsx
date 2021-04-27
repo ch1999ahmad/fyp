@@ -4,7 +4,7 @@ import BottomNav from '../component/BottomNav';
 import { AntDesign } from '@expo/vector-icons';
 import Card from '../component/Card';
 
-const Find = () => {
+const Find = (props) => {
     return (
         <View style={styles.container}>
 
@@ -35,7 +35,7 @@ const Find = () => {
                 <Card />
                 </View>
             </ScrollView>
-            <BottomNav />
+            <BottomNav navigation={props.navigation} />
 
 
         </View>

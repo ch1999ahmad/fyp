@@ -1,5 +1,5 @@
 import React, { Profiler } from 'react';
-import { createStackNavigator, TransitionPresets, TransitionSpecs,View ,ActivityIndicator,Text} from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets, TransitionSpecs, View, ActivityIndicator, Text } from '@react-navigation/stack';
 
 import { NavigationContainer } from '@react-navigation/native';
 // import * as Font from 'expo-font'
@@ -15,10 +15,10 @@ import AddItem from './src/screen/AddItem';
 import Categories from './src/screen/Categories';
 import MyCart from './src/screen/MyCart';
 import Favourite from './src/screen/Favourite';
+import Account from './src/screen/Account';
 
 
 
- 
 const Stack = createStackNavigator();
 
 class App extends React.Component {
@@ -29,9 +29,9 @@ class App extends React.Component {
 
   // async componentDidMount() {
   //   await Font.loadAsync({
-     
+
   //     Poppins: require('./assets/fonts/Poppins-Light.ttf'),
-      
+
 
   //   });
   //   this.setState({ fontsLoaded: true });
@@ -41,39 +41,39 @@ class App extends React.Component {
   render() {
     return (
       // this.state.fontsLoaded ?
-     
-        <NavigationContainer>
 
-          <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-               initialRouteName="Favourite"    headerMode='none' >
-               <Stack.Screen name="Load" component={Load}/>
-             <Stack.Screen name="Start" component={Start}/>
-             <Stack.Screen name="Login" component={Login} />
-             <Stack.Screen name="Registration" component={Registration} />
-             <Stack.Screen name="Forgetpass" component={Forgetpass} />
-             <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
-             <Stack.Screen name="Home" component={Home} />
-             <Stack.Screen name="Find" component={Find} />
-             <Stack.Screen name="AddItem" component={AddItem} />
-             <Stack.Screen name="Categories" component={Categories} />
-             <Stack.Screen name="MyCart" component={MyCart} />
-             <Stack.Screen name="Favourite" component={Favourite} />
-           
-            
-           
-            {/* <Stack.Screen name="Rapp" component={Rapp}/> */}
-           
+      <NavigationContainer>
 
-          </Stack.Navigator>
+        <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
+          initialRouteName="Account" headerMode='none' >
+          <Stack.Screen name="Load" component={Load} />
+          <Stack.Screen name="Start" component={Start} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Registration" component={Registration} />
+          <Stack.Screen name="Forgetpass" component={Forgetpass} />
+          <Stack.Screen name="SuccessfulRegister" component={SuccessfulRegister} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Find" component={Find} />
+          <Stack.Screen name="AddItem" component={AddItem} />
+          <Stack.Screen name="Categories" component={Categories} />
+          <Stack.Screen name="MyCart" component={MyCart} />
+          <Stack.Screen name="Favourite" component={Favourite} />
+           <Stack.Screen name="Account" component={Account} /> 
 
-        </NavigationContainer>
-          
-        // :
-        // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        //   <ActivityIndicator size='large' color='red' />
-        //   <Text>Font is loading</Text>
-        // </View>
-        );
-      }
+
+          {/* <Stack.Screen name="Rapp" component={Rapp}/> */}
+
+
+        </Stack.Navigator>
+
+      </NavigationContainer>
+
+      // :
+      // <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      //   <ActivityIndicator size='large' color='red' />
+      //   <Text>Font is loading</Text>
+      // </View>
+    );
+  }
 }
 export default App;

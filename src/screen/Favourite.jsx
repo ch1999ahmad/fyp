@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import FavCard from "../component/FavCard";
 import BottomNav from '../component/BottomNav';
-const Favourite =()=>{
+const Favourite =(props)=>{
     return(
         <View style={styles.container}>
               
@@ -30,7 +30,7 @@ const Favourite =()=>{
                  <Text style={{fontSize:15,fontWeight:'bold',textAlign:'center',color:"#fff"}}>Add All To Cart</Text>
                 </TouchableOpacity>
                 </View>
-            <BottomNav/>
+            <BottomNav navigation={props.navigation}/>
         </View>
     )
 };
