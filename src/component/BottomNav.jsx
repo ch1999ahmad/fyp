@@ -19,25 +19,29 @@ const BottomNav = (props) => {
             <View style={styles.nav} >
                 <View style={{ flexDirection: 'row', }}>
                     <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
-                        <Entypo name="shop" size={24} color="black" />
+                        <Entypo style={{alignSelf:"center"}} name="shop" size={24} color="black" />
                         <Text style={{ alignItems: 'center', color: 'black', }}>Shop</Text>
 
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity onPress={() => props.navigation.navigate('Find')} >
-                    <AntDesign name="search1" size={24} color="black" />
+                    <AntDesign style={{alignSelf:"center"}} 
+                    name="search1" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Explore</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => props.navigation.navigate('MyCart')}>
-                    <MaterialCommunityIcons name="cart-outline" size={24} color="black" />
+                    <MaterialCommunityIcons style={{alignSelf:"center"}}
+                    name="cart-outline" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Cart</Text>
                 </TouchableOpacity>
                 <TouchableOpacity  onPress={() => props.navigation.navigate('Favourite')}>
-                    <FontAwesome5 name="heart" size={24} color="black" />
+                    <FontAwesome5 style={{alignSelf:"center"}}
+                     name="heart" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Favourite</Text>
                 </TouchableOpacity>
-                <TouchableOpacity >
-                    <MaterialCommunityIcons name="account-outline" size={24} color="black" />
+                <TouchableOpacity  onPress={() => props.navigation.navigate('Account')}>
+                    <MaterialCommunityIcons style={{alignSelf:"center"}}
+                     name="account-outline" size={24} color="black" />
                     <Text style={{ alignItems: 'center', color: 'black', }}>Account</Text>
                 </TouchableOpacity>
             </View>

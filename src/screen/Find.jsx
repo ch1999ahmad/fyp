@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, TextInput, Image, ScrollView } from 'react-nati
 import BottomNav from '../component/BottomNav';
 import { AntDesign } from '@expo/vector-icons';
 import Card from '../component/Card';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import CardThrd from "../component/CardThrd";
+
 
 const Find = (props) => {
     return (
@@ -18,26 +21,25 @@ const Find = (props) => {
                 </TextInput>
             </View>
             <ScrollView>
-                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
-                <Card />
-                <Card />
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
+                    <CardThrd Image={require('../../assets/Vgetble.png')} text="Frash Fruits & Vegetable" color='#B7DFF5' Rcolor='#B7DFF5'/>
+                    <CardThrd Image={require('../../assets/Vgetble.png')} text={"Cooking Oil \n & Ghee"} color='#F8A44C' Rcolor='#f8a44c'  />
                 </View>
-                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
-                <Card />
-                <Card />
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
+                    <CardThrd />
+                    <CardThrd />
                 </View>
-                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
-                <Card />
-                <Card />
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
+                    <CardThrd />
+                    <CardThrd />
                 </View>
-                <View style={{flexDirection:'row',paddingHorizontal:10,justifyContent:'space-around'}}>
-                <Card />
-                <Card />
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
+                    <CardThrd />
+                    <CardThrd />
                 </View>
+
             </ScrollView>
             <BottomNav navigation={props.navigation} />
-
-
         </View>
 
     );
