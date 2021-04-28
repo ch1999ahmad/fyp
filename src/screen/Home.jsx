@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
 import CardSec from '../component/CardSec';
-const Home = (props,navigation) => {
+const Home = (props) => {
     return (
 
         <View style={styles.container}>
@@ -36,20 +36,20 @@ const Home = (props,navigation) => {
                     paddingTop: 10
                 }} >
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Exclusive Offer</Text>
-                    <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
+                    <TouchableOpacity ><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                 </View>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card navigation={props.navigation}  />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card navigation={props.navigation} />
                     </View>
                 </ScrollView>
                 <View style={{
@@ -61,7 +61,7 @@ const Home = (props,navigation) => {
                 </View>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
                         <Card />
