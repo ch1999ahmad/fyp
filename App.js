@@ -16,7 +16,7 @@ import Categories from './src/screen/Categories';
 import MyCart from './src/screen/MyCart';
 import Favourite from './src/screen/Favourite';
 import Account from './src/screen/Account';
-
+import CheckOut from './src/screen/CheckOut';
 
 
 const Stack = createStackNavigator();
@@ -45,7 +45,7 @@ class App extends React.Component {
       <NavigationContainer>
 
         <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-          initialRouteName="Load" headerMode='none' >
+          initialRouteName="CheckOut" headerMode='none' >
           <Stack.Screen name="Load" component={Load} />
           <Stack.Screen name="Start" component={Start} />
           <Stack.Screen name="Login" component={Login} />
@@ -59,6 +59,7 @@ class App extends React.Component {
           <Stack.Screen name="MyCart" component={MyCart} />
           <Stack.Screen name="Favourite" component={Favourite} />
            <Stack.Screen name="Account" component={Account} /> 
+           <Stack.Screen name="CheckOut" component={CheckOut} /> 
 
 
           {/* <Stack.Screen name="Rapp" component={Rapp}/> */}
