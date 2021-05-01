@@ -64,13 +64,13 @@ const Home = (props) => {
                         <Card  navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation}/>
                     </View>
                 </ScrollView>
                 <View style={{
@@ -93,16 +93,16 @@ const Home = (props) => {
                 </ScrollView>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card   navigation={props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card />
+                        <Card  navigation={props.navigation}/>
                     </View>
                 </ScrollView>
 
