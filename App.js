@@ -3,6 +3,7 @@ import { createStackNavigator, TransitionPresets, TransitionSpecs, View, Activit
 
 import { NavigationContainer } from '@react-navigation/native';
 // import * as Font from 'expo-font'
+import First from "./src/screen/First";
 import Load from "./src/screen/Load";
 import Start from './src/screen/Start';
 import Login from './src/screen/Login';
@@ -45,7 +46,8 @@ class App extends React.Component {
       <NavigationContainer>
 
         <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-          initialRouteName="Home" headerMode='none' >
+          initialRouteName="First" headerMode='none' >
+           <Stack.Screen name="First" component={First} />
           <Stack.Screen name="Load" component={Load} />
           <Stack.Screen name="Start" component={Start} />
           <Stack.Screen name="Login" component={Login} />

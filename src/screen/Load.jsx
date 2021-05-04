@@ -15,7 +15,7 @@ const Load = ({navigation}) => {
                         onPress={() => navigation.navigate('Start')}>
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color:'#fff'}}>Get Started</Text>
                     </TouchableOpacity>
-            <Buffer />
+            {/* <Buffer /> */}
         </View>
        
     )
