@@ -6,6 +6,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
 import CardSec from '../component/CardSec';
+
+
 const Home = (props) => {
     return (
 
