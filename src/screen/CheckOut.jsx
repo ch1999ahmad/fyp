@@ -52,7 +52,8 @@ const CheckOut = (props) => {
                 <Text>$1200</Text>
             </View>
             <View style={{}}>
-                    <TouchableOpacity  style={{backgroundColor:"#59C32F",width:'70%',alignSelf:"center"
+                    <TouchableOpacity  onPress={() => props.navigation.navigate('Successful')}
+                    style={{backgroundColor:"#59C32F",width:'70%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13,}}>
                         <Text style={{fontSize:17,textAlign:"center",color:'#fff'}}>Place Order</Text>
                     </TouchableOpacity>
