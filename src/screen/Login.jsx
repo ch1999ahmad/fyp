@@ -1,10 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { ImageBackground, View, Text, StyleSheet, ScrollView, TextInput, Dimensions,TouchableOpacity } from "react-native";
 
 
 
 
 const Login = ({navigation}) => {
+
+    // const [email , setEmail] = useState("");
+    // const [password , setPassword] = useState("");
     return (
 
         <ScrollView Style={{ minHeight: Dimensions.get('screen').height, justifyContent: 'space-evenly' }} showsVerticalScrollIndicator={false}>

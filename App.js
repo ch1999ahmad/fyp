@@ -48,7 +48,7 @@ class App extends React.Component {
       <NavigationContainer>
 
         <Stack.Navigator screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}
-          initialRouteName="Seacrhlist" headerMode='none' >
+          initialRouteName="First" headerMode='none' >
            <Stack.Screen name="First" component={First} />
           <Stack.Screen name="Load" component={Load} />
           <Stack.Screen name="Start" component={Start} />
