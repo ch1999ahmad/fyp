@@ -68,3 +68,11 @@ export const Carousal = ({ images, width, height, active, inActive ,props }) => 
         </View>
     );
 }
+
+
+
+
+
+
+
+
