@@ -5,7 +5,11 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import BottomNav from '../component/BottomNav';
-const Account = (props) => {
+
+class Account extends React.Component{
+    render(props){
+
+// const Account = (props) => {
     return (
         <View style={styles.container}>
 
@@ -62,13 +66,13 @@ const Account = (props) => {
                         <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>Promotions</Text>
                     </TouchableOpacity>
                 </View>
-           <BottomNav navigation={props.navigation}/>
+           <BottomNav navigation={this.props.navigation}/>
         </View>
 
     );
 
 }
-
+};
 const styles = StyleSheet.create({
     container: {
         flex: 1,

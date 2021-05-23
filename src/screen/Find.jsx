@@ -6,8 +6,11 @@ import Card from '../component/Card';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CardThrd from "../component/CardThrd";
 
+class Find extends React.Component{
+    render(props){
 
-const Find = (props) => {
+    
+// const Find = (props) => {
     return (
         <View style={styles.container}>
 
@@ -39,11 +42,11 @@ const Find = (props) => {
                 </View>
 
             </ScrollView>
-            <BottomNav navigation={props.navigation} />
+            <BottomNav navigation={this.props.navigation} />
         </View>
 
     );
-
+    }
 };
 
 const styles = StyleSheet.create({

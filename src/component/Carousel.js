@@ -51,7 +51,7 @@ export const Carousal = ({ images, width, height, active, inActive ,props }) => 
             >
                 {
                     images.map((img, index) =>
-                        <Image key={index}  source={img} style={{ width: totalWidth }}  />
+                        <Image key={index}  source={img} style={{ width: totalWidth,height:'100%' }}  />
                     )
                 }
 

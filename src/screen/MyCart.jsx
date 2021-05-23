@@ -9,7 +9,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
-const MyCart = (props) => {
+
+class MyCart extends React.Component{
+    render(props){
+
+// const MyCart = (props) => {
     return (
         <View style={styles.container}>
             <View style={{ borderBottomWidth: 1, borderColor: '#E2E2E2' }}>
@@ -25,15 +29,16 @@ const MyCart = (props) => {
                 
             </ScrollView>
                    <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:100,}}>
-                <TouchableOpacity onPress={() =>  props.navigation.navigate('CheckOut')}
+                <TouchableOpacity onPress={() =>  this.props.navigation.navigate('CheckOut')}
                 style={{backgroundColor:"#59C32F",width:'160%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13, }}>
                  <Text style={{fontSize:18,textAlign:'center',color:"#fff"}}>Go to Checkout</Text>
                 </TouchableOpacity>
                 </View>
-            <BottomNav navigation={props.navigation}/>
+            <BottomNav navigation={this.props.navigation}/>
         </View>
     );
+    }
 };
 const styles = StyleSheet.create({
     container: {

@@ -5,11 +5,15 @@ import { Entypo } from '@expo/vector-icons';
 import CheckCard from '../component/CheckCard';
 import { Octicons } from '@expo/vector-icons';
 
-const CheckOut = (props) => {
+
+class CheckOut extends React.Component{
+    render(props){
+
+// const CheckOut = (props) => {
     return (
         <View style={styles.container}>
             <View style={{ flexDirection: 'row', justifyContent: "space-between", paddingTop: 30 }}>
-                <TouchableOpacity onPress={() => props.navigation.goBack()}><Ionicons name="md-close" size={24} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.navigation.goBack()}><Ionicons name="md-close" size={24} color="black" /></TouchableOpacity>
                 <TouchableOpacity><Entypo name="plus" size={24} color="black" /></TouchableOpacity>
             </View>
             <View>
@@ -52,7 +56,7 @@ const CheckOut = (props) => {
                 <Text>$1200</Text>
             </View>
             <View style={{}}>
-                    <TouchableOpacity  onPress={() => props.navigation.navigate('Successful')}
+                    <TouchableOpacity  onPress={() => this.props.navigation.navigate('Successful')}
                     style={{backgroundColor:"#59C32F",width:'70%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13,}}>
                         <Text style={{fontSize:17,textAlign:"center",color:'#fff'}}>Place Order</Text>
@@ -63,7 +67,7 @@ const CheckOut = (props) => {
 
     );
 }
-
+};
 
 const styles = StyleSheet.create({
     container: {

@@ -5,8 +5,12 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 
+class Start extends React.Component{
+    render(props){
 
-const Start = ({ navigation }) => {
+    
+
+// const Start = ({ navigation }) => {
     return (
         <ImageBackground source={require('../../assets/startimg.png')} style={styles.container}>
             <View style={styles.header}>
@@ -23,11 +27,11 @@ const Start = ({ navigation }) => {
                 <Text style={{ color: 'white' }}>Signin with account</Text>
                 <View >
                 <TouchableOpacity style={styles.btn}
-                        onPress={() => navigation.navigate('Registration')}>
+                        onPress={() => this.props.navigation.navigate('Registration')}>
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', }}>Register Now</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn}
-                        onPress={() => navigation.navigate('Login')}>
+                        onPress={() => this.props.navigation.navigate('Login')}>
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', }}>Login</Text>
                     </TouchableOpacity>
                 </View>
@@ -36,6 +40,7 @@ const Start = ({ navigation }) => {
         </ImageBackground>
 
     );
+}
 };
 export default Start;
 const { height } = Dimensions.get('screen')

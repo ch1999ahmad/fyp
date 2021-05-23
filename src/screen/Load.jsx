@@ -2,8 +2,12 @@ import React from 'react';
 import { View, StyleSheet, Text, Image, ImageBackground,TouchableOpacity } from 'react-native';
 import Buffer from "../component/Buffer";
 
+class Load extends React.Component{
+    render(props){
+        
+    
 
-const Load = ({navigation}) => {
+// const Load = ({navigation}) => {
     return (
        
         <View style={styles.container}>
@@ -12,7 +16,7 @@ const Load = ({navigation}) => {
             <Text style={{ fontSize: 20, justifyContent: 'center', alignSelf: 'center', marginBottom: 10, padding: 8, color: '#1BB60D' }}
             > Online Shopping Store</Text>
              <TouchableOpacity style={styles.btn}
-                        onPress={() => navigation.navigate('Start')}>
+                        onPress={() => this.props.navigation.navigate('Start')}>
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color:'#fff'}}>Get Started</Text>
                     </TouchableOpacity>
             {/* <Buffer /> */}
@@ -20,7 +24,7 @@ const Load = ({navigation}) => {
        
     )
 }
-
+}
 const styles = StyleSheet.create({
     container: {
         flex: 1,

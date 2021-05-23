@@ -6,13 +6,20 @@ import { Carousal } from '../component/Carousel';
 import AddToFavorite from '../component/AddToFavorite';
 import { AntDesign } from '@expo/vector-icons';
 import Counter from '../component/Counter';
-const AddItem = ({ navigation }) => {
+
+
+
+class AddItem extends React.Component{
+    render(props){
+
+    
+// const AddItem = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={{ alignSelf: 'flex-end', justifyContent: 'flex-end' }}>
+            {/* <View style={{ alignSelf: 'flex-end', justifyContent: 'flex-end' }}> */}
                 <Carousal active='#000' inActive='#D9D9D9' height={300} images={[require('../../assets/kella.png'), require('../../assets/kella.png'), require('../../assets/kella.png')]} />
-            </View>
+            {/* </View> */}
             <View style={{ paddingHorizontal: 20, flex: 1, justifyContent: 'space-evenly' }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
                     <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Naturel red apple</Text>
@@ -54,7 +61,7 @@ const AddItem = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={{}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('CheckOut')}
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('CheckOut')}
                         style={{
                             backgroundColor: "#59C32F", width: '70%', alignSelf: "center"
                             , height: 50, justifyContent: "center", borderRadius: 13,
@@ -68,6 +75,7 @@ const AddItem = ({ navigation }) => {
     );
 
 }
+};
 
 const styles = StyleSheet.create({
     container: {

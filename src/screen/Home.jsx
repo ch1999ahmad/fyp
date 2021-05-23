@@ -7,8 +7,11 @@ import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
 import CardSec from '../component/CardSec';
 
+class Home extends React.Component{
+    render(props){
 
-const Home = (props) => {
+    
+// const Home = (props) => {
     return (
 
         <View style={styles.container}>
@@ -42,16 +45,16 @@ const Home = (props) => {
                 </View>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={props.navigation}  />
+                        <Card navigation={this.props.navigation}  />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={props.navigation} />
+                        <Card navigation={this.props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={props.navigation} />
+                        <Card navigation={this.props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={props.navigation} />
+                        <Card navigation={this.props.navigation} />
                     </View>
                 </ScrollView>
                 <View style={{
@@ -63,16 +66,16 @@ const Home = (props) => {
                 </View>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation} />
+                        <Card  navigation={this.props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation} />
+                        <Card  navigation={this.props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation}/>
+                        <Card  navigation={this.props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation}/>
+                        <Card  navigation={this.props.navigation}/>
                     </View>
                 </ScrollView>
                 <View style={{
@@ -95,25 +98,25 @@ const Home = (props) => {
                 </ScrollView>
                 <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation}/>
+                        <Card  navigation={this.props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card   navigation={props.navigation}/>
+                        <Card   navigation={this.props.navigation}/>
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation} />
+                        <Card  navigation={this.props.navigation} />
                     </View>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={props.navigation}/>
+                        <Card  navigation={this.props.navigation}/>
                     </View>
                 </ScrollView>
 
             </ScrollView>
-            <BottomNav navigation={props.navigation}/>
+            <BottomNav navigation={this.props.navigation}/>
         </View>
     );
 }
-
+};
 
 const styles = StyleSheet.create({
     container: {

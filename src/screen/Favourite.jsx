@@ -6,7 +6,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import FavCard from "../component/FavCard";
 import BottomNav from '../component/BottomNav';
-const Favourite =(props)=>{
+
+class Favourite extends React.Component{
+    render(props){
+
+// const Favourite =(props)=>{
     return(
         <View style={styles.container}>
               
@@ -25,14 +29,16 @@ const Favourite =(props)=>{
            <FavCard/>
            </ScrollView>
            <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:100,}}>
-                <TouchableOpacity style={{backgroundColor:"#59C32F",width:'160%',alignSelf:"center"
+                <TouchableOpacity  onPress={() => this.props.navigation.navigate('MyCart')}
+                style={{backgroundColor:"#59C32F",width:'160%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13, }}>
                  <Text style={{fontSize:15,fontWeight:'bold',textAlign:'center',color:"#fff"}}>Add All To Cart</Text>
                 </TouchableOpacity>
                 </View>
-            <BottomNav navigation={props.navigation}/>
+            <BottomNav navigation={this.props.navigation}/>
         </View>
     )
+    }
 };
  
 const styles = StyleSheet.create({

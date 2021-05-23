@@ -4,8 +4,10 @@ import { ImageBackground, View, Text, StyleSheet, ScrollView, TextInput, Dimensi
 
 
 
+class Login extends React.Component{
+    render(props){
 
-const Login = ({navigation}) => {
+// const Login = ({navigation}) => {
 
     // const [email , setEmail] = useState("");
     // const [password , setPassword] = useState("");
@@ -34,11 +36,11 @@ const Login = ({navigation}) => {
                         autoCapitalize='none'
                         secureTextEntry={true}
                     />
-                    <TouchableOpacity  onPress={() => navigation.navigate('Forgetpass')} style={{ paddingVertical: 8, alignSelf: 'flex-end',marginBottom:20 }}><Text style={{color:'#0000FF'}}>Forget Password</Text></TouchableOpacity>
+                    <TouchableOpacity  onPress={() => this.props.navigation.navigate('Forgetpass')} style={{ paddingVertical: 8, alignSelf: 'flex-end',marginBottom:20 }}><Text style={{color:'#0000FF'}}>Forget Password</Text></TouchableOpacity>
                    </View>
                    <View style={{}}>
                     <TouchableOpacity  style={styles.btn} 
-                     onPress={() => navigation.navigate('Home')} >
+                     onPress={() => this.props.navigation.navigate('Home')} >
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color:'#fff'}}>Login</Text>
                     </TouchableOpacity>
                     </View>
@@ -53,7 +55,7 @@ const Login = ({navigation}) => {
 
     );
 
-
+    }
 };
 
 

@@ -3,8 +3,11 @@ import { ImageBackground, View, Text, StyleSheet, ScrollView, TextInput, Dimensi
 
 
 
+class Registration extends React.Component{
+    render(props){
 
-const Registration = ({ navigation }) => {
+    
+// const Registration = ({ navigation }) => {
     return (
         
         <View >
@@ -46,7 +49,7 @@ const Registration = ({ navigation }) => {
                 </View>
                 <View >
                     <TouchableOpacity style={styles.btn}
-                        onPress={() => navigation.navigate('Login')}>
+                        onPress={() => this.props.navigation.navigate('Login')}>
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color: '#fff' }}>Register</Text>
                     </TouchableOpacity>
                 </View>
@@ -56,6 +59,7 @@ const Registration = ({ navigation }) => {
             </View>
 
     )
+}
 };
 
 
