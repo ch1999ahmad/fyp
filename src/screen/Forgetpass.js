@@ -18,8 +18,11 @@ class Forgetpass extends React.Component {
            
             email: '',
 
+
         }
     }
+
+    
     addToReduc = () => {
 
         if (this.state.email == '') {

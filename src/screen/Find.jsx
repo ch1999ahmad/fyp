@@ -45,6 +45,7 @@ class Find extends React.Component{
             <BottomNav navigation={this.props.navigation} />
         </View>
 
+
     );
     }
 };

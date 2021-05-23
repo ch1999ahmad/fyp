@@ -28,6 +28,8 @@ class CheckOut extends React.Component{
                     <View style={{ padding: 20, paddingLeft: 0 }}><CheckCard /></View>
                     <View style={{ padding: 20 }}><CheckCard /></View>
                     <View style={{ padding: 20 }}><CheckCard /></View>
+
+                    
                 </ScrollView>
             </View>
             <View style={{flex:1,justifyContent:'space-evenly'}}>
