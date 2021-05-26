@@ -1,11 +1,55 @@
 import React from "react";
 import { useState } from "react";
 import { ImageBackground, View, Text, StyleSheet, ScrollView, TextInput, Dimensions,TouchableOpacity } from "react-native";
-
+import { connect } from "react-redux";
+import { _login } from "../store/middlewares/authMiddleware";
+//import _login from "../store/middlewares/authMiddleware";
 
 
 class Login extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            text:"",
+            email:"",
+            password:"",
+        }
+    }
+    addToReduc = () =>{
+        if(this.state.email ==""){
+            alert("Please Enter Your Email")
+        }
+       else if(this.state.password==""){
+           alert("Please Enter Your Password")
+       }
+        else {
+            let param ={
+                "email": this.state.email,
+                "password": this.state.password
+
+            }
+            this.props._login(param)
+        }
+
+
+
+
+    }
+
+    login = async (e) => {
+        let param = {
+            "email":this.state.email,
+            "password":this.state.password
+        }
+        let res = await this.props._login(param)
+    }
+
+
+
+
+
     render(props){
+        
 
 // const Login = ({navigation}) => {
 
@@ -24,13 +68,13 @@ class Login extends React.Component{
                     >Login</Text>
                     <Text style={{ color: 'black', paddingBottom: 10, }}>Enter your email and password</Text>
                     <Text style={{ fontSize: 15, color: 'black', paddingTop: 10, fontWeight: 'bold' }}>Email</Text>
-                    <TextInput
+                    <TextInput onChangeText={(email)=>{this.setState({email})}}
                         placeholder="Your Email"
                         style={styles.textinput}
                         keyboardType={'email-address'}
                         autoCapitalize='none' />
                     <Text style={{ fontSize: 15, color: 'black', paddingTop: 10, fontWeight: 'bold' }}>Password</Text>
-                    <TextInput
+                    <TextInput onChangeText={(password)=>{this.setState({password})}}
                         placeholder="Your Password"
                         style={styles.textinput}
                         autoCapitalize='none'
@@ -40,7 +84,7 @@ class Login extends React.Component{
                    </View>
                    <View style={{}}>
                     <TouchableOpacity  style={styles.btn} 
-                     onPress={() => this.props.navigation.navigate('Home')} >
+                     onPress={() => this.addToReduc()} >
                         <Text style={{ fontSize: 15, alignSelf: 'center', fontWeight: 'bold', justifyContent: 'center', color:'#fff'}}>Login</Text>
                     </TouchableOpacity>
                     </View>
@@ -95,4 +139,18 @@ const styles = StyleSheet.create({
      
     }
 });
-export default Login;
+
+const mapState = state =>{
+    return{
+        logged: state.authReducer.logged,
+        // login k liya hain email and password
+    }
+}
+const mapDispatch = dispatch =>{
+    return{
+        _login: (param) => dispatch(_login(param)),
+        setLoading: (bol)=> dispatch(set_loading(bol)),
+    }
+}
+
+export default connect(mapState, mapDispatch)(Login);

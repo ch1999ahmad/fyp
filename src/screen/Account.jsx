@@ -5,31 +5,45 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import BottomNav from '../component/BottomNav';
+import { _login } from '../store/middlewares/authMiddleware';
+import { connect } from 'react-redux';
+// import { Entypo } from '@expo/vector-icons';
 
 class Account extends React.Component{
-    render(props){
+    constructor(){
+        super();
+        this.state={
+            name:"",
+
+        }
+    }
+    render(){
 
 // const Account = (props) => {
     return (
         <View style={styles.container}>
-
-            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <TouchableOpacity><Entypo name="add-user" size={24} color="black" /></TouchableOpacity>
+            <View style={{ flexDirection: 'row',justifyContent: 'space-evenly', }}>
+            
                 <Image style={{ width: '30%', height: 95, borderRadius: 100 }}
-                    source={require('../../assets/ahmad.jpeg')} />
+                
+                    source={require('../../assets/ahmad.jpeg')}  />
+                  
 
-                <View style={{ justifyContent: 'center' }}>
+
+                <View style={{ justifyContent: 'center', }}>
                     <Text style={{ fontSize: 23, fontWeight: 'bold' }}
-                    >Ahmad ch</Text>
+                    >{this.props.user.firstName}</Text>
                     <Text style={{ color: "#7C7C7C" }}>Developer</Text>
                 </View>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <FontAwesome name="phone" size={17} color="#7C7C7C" />
-                <Text style={{ color: "#7C7C7C",paddingLeft: 10  }}>03085137163</Text>
+                <Text style={{ color: "#7C7C7C",paddingLeft: 10  }}>{this.props.user.phone}</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <Entypo name="mail" size={18} color="#7C7C7C" />
-                <Text style={{ color: "#7C7C7C",paddingLeft: 10  }}>Emmich56@gmail.com</Text>
+                <Text style={{ color: "#7C7C7C",paddingLeft: 10  }}>{this.props.user.email}</Text>
             </View>
             <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
 
@@ -82,4 +96,18 @@ const styles = StyleSheet.create({
          paddingBottom:100
     },
 })
-export default Account;
+
+const mapState = state =>{
+    return{
+        logged:state.authReducer.logged,
+        user: state.authReducer.user,
+    }
+}
+
+const mapDispatch = dispatch =>{
+    return{
+        _login: (param) => dispatch(_login(param)),
+        setLoading: (bol) => dispatch(set_loading(bol)),
+    }
+}
+export default connect(mapState,mapDispatch) (Account);
