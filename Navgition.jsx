@@ -20,7 +20,7 @@ import CheckOut from './src/screen/CheckOut';
 import Successful from './src/screen/Successful';
 import Seacrhlist from './src/component/Searchlist';
 import { connect } from 'react-redux';
-// import Counter from "./src/screen/Counter";
+ import Setting from "./src/screen/Setting";
 
 
 
@@ -77,7 +77,7 @@ class AppNavigition extends React.Component {
             <Stack.Screen name="CheckOut" component={CheckOut} />
             
             <Stack.Screen name="Successful" component={Successful } />
-            {/* <Stack.Screen name="CompleteOrder" component={CompleteOrder} /> */}
+            <Stack.Screen name="Setting" component={Setting} />
             </Stack.Navigator>
         )
     }
