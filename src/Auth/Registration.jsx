@@ -10,8 +10,8 @@ class Registration extends React.Component {
     constructor() {
         super();
         this.state = {
-            Frtname: '',
-            Lstname: '',
+            Fname: '',
+            Lname: '',
             email: '',
             city: '',
             password: '',
@@ -21,10 +21,10 @@ class Registration extends React.Component {
         }
     }
     addToReduc = async () => {
-        if (this.state.Frtname == '') {
+        if (this.state.Fname == '') {
             alert('Please Enter First Name')
         }
-        else if (this.state.Lstname == '') {
+        else if (this.state.Lname == '') {
             alert('Please Enter Last Name')
         }
         else if (this.state.email == '') {
@@ -43,11 +43,11 @@ class Registration extends React.Component {
             alert('Please Enter Phone#')
         else {
             let param = {
-                "firstName": this.state.Frtname,
-                "lastName": this.state.Lstname,
+                "firstName": this.state.Fname,
+                "lastName": this.state.Lname,
+                "phone": this.state.phone,
                 "email": this.state.email,
                 "city": this.state.city,
-                "phone": this.state.phone,
                 "password": this.state.password,
             }
             let response = await api(Path.register, "POST", param)
@@ -66,13 +66,15 @@ class Registration extends React.Component {
         }
         this.props.setLoading(true)
         let user = {
-            firstName: this.state.Frtname,
-            lastName: this.state.Lstname,
-            email: this.state.email,
-            city: this.state.city,
-            phone: this.state.phone,
+            firstName: this.state.Fname.trim(),
+            lastName: this.state.Lname.trim(),
+            phone: this.state.phone.trim(),
+            email: this.state.email.trim(),
+            city: this.state.city.trim(),
             password: this.state.password,
             Cpassword: this.state.Cpassword,
+
+
         }
         let res = await api.registerUser(user)
         if (res) {
@@ -106,7 +108,7 @@ class Registration extends React.Component {
 
                         <Text style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>FirstName</Text>
                         <TextInput
-                            onChangeText={(Frtname) => { this.setState({ Frtname }) }}
+                            onChangeText={(Fname) => { this.setState({ Fname }) }}
                             placeholder="FirstName"
                             style={styles.textinput}
                             keyboardType={'email-address'}
@@ -114,8 +116,18 @@ class Registration extends React.Component {
 
                         <Text style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>LastName</Text>
                         <TextInput
-                            onChangeText={(Lstname) => { this.setState({ Lstname }) }}
+                            onChangeText={(Lname) => { this.setState({ Lname }) }}
                             placeholder="LastName"
+                            style={styles.textinput}
+                            keyboardType={'email-address'}
+                            autoCapitalize='none' />
+
+
+
+                        <Text style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>Phone</Text>
+                        <TextInput
+                            onChangeText={(phone) => { this.setState({ phone }) }}
+                            placeholder="Phone"
                             style={styles.textinput}
                             keyboardType={'email-address'}
                             autoCapitalize='none' />
@@ -132,14 +144,6 @@ class Registration extends React.Component {
                         <TextInput
                             onChangeText={(city) => { this.setState({ city }) }}
                             placeholder="City"
-                            style={styles.textinput}
-                            keyboardType={'email-address'}
-                            autoCapitalize='none' />
-
-                        <Text style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>Phone</Text>
-                        <TextInput
-                            onChangeText={(phone) => { this.setState({ phone }) }}
-                            placeholder="Phone"
                             style={styles.textinput}
                             keyboardType={'email-address'}
                             autoCapitalize='none' />

@@ -11,8 +11,8 @@ class Login extends React.Component{
         super();
         this.state={
             text:"",
-            email:"",
-            password:"",
+            email:"Ahmad02@gmail.com",
+            password:"12",
         }
     }
     addToReduc = () =>{

@@ -3,25 +3,30 @@ import { View, StyleSheet, Text, TextInput, Image, ScrollView, TouchableOpacity,
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { EvilIcons } from '@expo/vector-icons';
 import BottomNav from '../component/BottomNav';
 import { _login } from '../store/middlewares/authMiddleware';
 import { connect } from 'react-redux';
+
 //import { Link } from '@react-navigation/native';
 // import { Entypo } from '@expo/vector-icons';
 
 class Account extends React.Component {
+    // componentDidMount(){
+    //     console.log(this.props.user)
+    // }
     constructor() {
         super();
         this.state = {
             name: "",
             email: "",
             phone: "",
-            city: "",
+            //city: "",
 
         }
     }
     render() {
+        
 
         // const Account = (props) => {
         return (
@@ -31,23 +36,33 @@ class Account extends React.Component {
 
             <View style={styles.container}>
 
-                <TouchableOpacity><Entypo name="add-user" size={24} color="black" /></TouchableOpacity>
+                <ImageBackground resizeMode='stretch' source={require('../../assets/Veges.jpg')} style={{
+                    width: "110%", height: '100%', minHeight: Dimensions.get('window').height, position: 'absolute', alignItems: 'center',
+
+                }} />
+
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Setting')}
+                ><Entypo name="add-user" size={24} color="black" /></TouchableOpacity>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
 
-                    <Image style={{ width: '30%', height: 95, borderRadius: 100 }}
-
-                        source={require('../../assets/ahmad.jpeg')} />
+                    <Image style={{borderRadius:60,width:100,height:100,backgroundColor:"#F5F8FA"}}
+                       source={{uri:this.props.user.avatar || null}} />
 
 
 
                     <View style={{ justifyContent: 'center', }}>
                         <Text style={{ fontSize: 23, fontWeight: 'bold' }}
                         >{this.props.user.firstName}</Text>
+                        <View style={{flexDirection:"row"}}>
+                        <View style={{justifyContent:"center"}}>
+                        <EvilIcons name="location" size={16} color="black" /></View>
                         <Text style={{ color: "#7C7C7C" }}>{this.props.user.city}</Text>
+                        </View>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <FontAwesome name="phone" size={17} color="#7C7C7C" />
+                    <FontAwesome name="phone" size={17} color="black" />
                     <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>{this.props.user.phone}</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
@@ -67,32 +82,32 @@ class Account extends React.Component {
 
                 <View style={{}}>
                     <TouchableOpacity style={{ flexDirection: 'row' }}>
-                        <Entypo name="heart" size={18} color="#7C7C7C" />
+                        <Entypo name="heart" size={18} color="red" />
                         <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>Your Favourites</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
                     <TouchableOpacity onPress={() => Linking.openURL("https://www.facebook.com/Cash-and-Carry-Store-101861745447448")}
-                     style={{ flexDirection: 'row' }}>
-                        <FontAwesome name="facebook-f" size={16} color="#7C7C7C" />
+                        style={{ flexDirection: 'row' }}>
+                        <FontAwesome name="facebook-f" size={16} color="blue" />
                         <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>Facebook</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View>
-                    <TouchableOpacity onPress={()=> Linking.openURL('whatsapp://send?text=Hi&phone=+923085137163') }
-                     style={{ flexDirection: 'row' }}>
-                        <FontAwesome name="whatsapp" size={18} color="#7C7C7C"/>
+                    <TouchableOpacity onPress={() => Linking.openURL('whatsapp://send?text=Hi&phone=+923085137163')}
+                        style={{ flexDirection: 'row' }}>
+                        <FontAwesome name="whatsapp" size={18} color="green" />
                         <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>Whatsapp</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
                     <TouchableOpacity style={{ flexDirection: 'row' }}>
                         <Ionicons name="settings" size={18} color="#7C7C7C" />
-                        <Text style={{ color: "#7C7C7C", paddingLeft: 10 }}>Settings</Text>
+                        <Text style={{ color: "#7C7C7C", paddingLeft: 10,textAlignVertical:"center" }}>Settings</Text>
                     </TouchableOpacity>
                 </View>
-               
+
                 <BottomNav navigation={this.props.navigation} />
             </View>
 

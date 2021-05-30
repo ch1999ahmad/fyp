@@ -49,6 +49,7 @@ class AppNavigition extends React.Component {
       AuthStack = () => {
         return (
             <Stack.Navigator headerMode="none" screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}>
+               {/* <Stack.Screen name="Setting" component={Setting} /> */}
                <Stack.Screen name="First" component={First} />
                <Stack.Screen name="Load" component={Load} />
                <Stack.Screen name="Start" component={Start} />
@@ -62,6 +63,7 @@ class AppNavigition extends React.Component {
     AppStack = () => {
         return (
             <Stack.Navigator headerMode="none" screenOptions={{ ...TransitionPresets.SlideFromRightIOS, gestureEnabled: true, gestureDirection: 'horizontal' }}>
+             
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Find" component={Find} />
          

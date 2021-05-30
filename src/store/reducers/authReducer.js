@@ -1,9 +1,9 @@
 
-import { LOGIN } from '../actions/types';
+import { LOGIN, UPDATE } from '../actions/types';
 
 
 const initialState = {
-    logged: false,   user: [], 
+    logged: false,   user: {}, 
 }
 
 const authReducer = (state = initialState, action) => {
@@ -20,7 +20,15 @@ const authReducer = (state = initialState, action) => {
      
             default:
                 return state;
-    
+            
+                case UPDATE:
+        {
+            return{
+                ...state,
+
+                type: UPDATE,  info : info
+            }
+        }
         }
     
     

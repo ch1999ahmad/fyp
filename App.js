@@ -3,7 +3,7 @@ import { createStackNavigator, TransitionPresets, TransitionSpecs, View, Activit
 
 import { NavigationContainer } from '@react-navigation/native';
 import { PersistGate } from 'redux-persist/integration/react';
-
+import firebase from 'firebase';
 import Navgition from './Navgition';
 import Store from './src/store/Store';
 import { Provider } from 'react-redux';
@@ -64,3 +64,18 @@ class App extends React.Component {
   }
 }
 export default App;
+
+var firebaseConfig = {
+  apiKey: "AIzaSyA_9LTIcnOckxwnmsK_TWoCkxVembi9m8g",
+  authDomain: "cashandcarry-14f29.firebaseapp.com",
+  projectId: "cashandcarry-14f29",
+  storageBucket: "cashandcarry-14f29.appspot.com",
+  messagingSenderId: "116874830184",
+  appId: "1:116874830184:web:ebed0c6585c5db7c3076dd",
+  measurementId: "G-0WDLQDV0RR"
+};
+//Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
+if(!firebase.apps.length)
+firebase.initializeApp(firebaseConfig);

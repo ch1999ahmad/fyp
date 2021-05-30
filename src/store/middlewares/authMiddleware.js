@@ -14,7 +14,7 @@ export const _login = (param) => {
 
         let response = await api(path.login,"POST",param)
             
-        console.log(response)
+        // console.log(response)
        
         if (response.success == true) { 
             
@@ -37,7 +37,14 @@ export const _login = (param) => {
         // return false
     }
 }
-
+ 
+export const _updateUser = (param, _id) => {
+    return async (dispatch , getState) =>{
+         console.log(_id)
+        let response = await api(path.update + _id, "PATCH", param);
+         console.log(response)
+    }
+}
 
  
 
