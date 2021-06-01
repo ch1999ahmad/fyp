@@ -45,7 +45,6 @@ class App extends React.Component {
   //   this.setState({ fontsLoaded: true });
   // }
 
-
   render() {
     return (
       // this.state.fontsLoaded ?
