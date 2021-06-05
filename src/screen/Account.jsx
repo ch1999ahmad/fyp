@@ -26,6 +26,7 @@ class Account extends React.Component {
         }
     }
     render() {
+        console.log(this.props.user)
         
 
         // const Account = (props) => {
