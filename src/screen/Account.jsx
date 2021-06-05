@@ -22,7 +22,6 @@ class Account extends React.Component {
             email: "",
             phone: "",
             //city: "",
-
         }
     }
     render() {
