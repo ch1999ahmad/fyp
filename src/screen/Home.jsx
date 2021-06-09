@@ -2,26 +2,109 @@ import React from 'react';
 import { View, StyleSheet, Text, TextInput, Image, ScrollView } from 'react-native';
 import BottomNav from '../component/BottomNav';
 import { AntDesign } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { State, TouchableOpacity } from 'react-native-gesture-handler';
 import { Carousal } from '../component/Carousel';
 import Card from '../component/Card';
 import CardSec from '../component/CardSec';
+import { connect } from 'react-redux';
+import { _getCategories, _getItems } from '../store/middlewares/appMiddleware';
+import kella from '../../assets/kella.png'
 
-class Home extends React.Component{
-    render(props){
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            food: [
+                {
+                    name: 'banana',
+                    price: "99$ ",
+                    desription: '',
+                    image: [
+                        kella, kella, kella
+                    ]
+                },
 
-    
-// const Home = (props) => {
-    return (
+                {
+                    name: 'banana',
+                    price: "99$ ",
+                    desription: '',
+                    image: [
+                        kella, kella, kella
+                    ]
+                },
 
-        <View style={styles.container}>
-            {/* <View style={{ borderRadius:13,flexDirection:"row",backgroundColor:'#f5f8fa', flex:0.25,  width: '90%', alignSelf: 'center', 
+                {
+                    name: 'banana',
+                    price: "99$ ",
+                    desription: '',
+                    image: [
+                        kella, kella, kella
+                    ]
+                },
+
+                {
+                    name: 'banana',
+                    price: "99$ ",
+                    desription: '',
+                    image: [
+                        kella, kella, kella
+                    ]
+                },
+
+            ],
+
+            fruits: [
+                {
+                    name: 'banana',
+                    price: '99$',
+                    image: [kella]
+                }
+            ]
+
+        }
+
+    }
+
+
+
+
+    async componentDidMount() {
+        let res = await this.props._getCategories()
+    }
+    getcategorie = async (e) => {
+        e.preventDefault()
+        // this.props.setLoading(true)
+        let res = await this.props._getCategories({})
+
+    }
+
+    async componentDidMount() {
+        let res = await this.props._getItems()
+    }
+    getitem = async (e) => {
+        e.preventDefault()
+        //  this.props.setLoading(true)
+        let res = await this.props._getItems({})
+    }
+
+
+
+
+
+    render() {
+    console.log(this.props.items)
+
+        // const Home = (props) => {
+        return (
+
+            <View style={styles.container}>
+                {/* <View style={{ borderRadius:13,flexDirection:"row",backgroundColor:'#f5f8fa', flex:0.25,  width: '90%', alignSelf: 'center', 
           alignItems:'center',paddingHorizonta:20}}> */}
-            <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 40, }}>
-                <Image
-                    source={require('../../assets/parrot.png')} />
-            </View>
-            
+                <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 40, }}>
+                    <Image
+                        source={require('../../assets/parrot.png')} />
+                </View>
+
                 <View style={styles.search}>
                     <AntDesign name="search1" size={20} color="black" />
                     <TextInput
@@ -30,92 +113,100 @@ class Home extends React.Component{
                     {/* </View> */}
                 </View>
                 <ScrollView>
-                <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 10 }}>
-                    <Carousal active='#000' inActive='#D9D9D9' height={100} images={[require('../../assets/home.jpeg'), require('../../assets/home.jpeg'), require('../../assets/home.jpeg')]} />
+                    <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 10 }}>
+                        <Carousal active='#000' inActive='#D9D9D9' height={100} images={[require('../../assets/home.jpeg'), require('../../assets/home.jpeg'), require('../../assets/home.jpeg')]} />
 
 
-                </View>
+                    </View>
 
-                <View style={{
-                    width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
-                    paddingTop: 10
-                }} >
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Exclusive Offer</Text>
-                    <TouchableOpacity ><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
-                </View>
-                <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={this.props.navigation}  />
+                    <View style={{
+                        width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
+                        paddingTop: 10
+                    }} >
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Exclusive Offer</Text>
+                        <TouchableOpacity ><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                     </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={this.props.navigation} />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={this.props.navigation} />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card navigation={this.props.navigation} />
-                    </View>
-                </ScrollView>
-                <View style={{
-                    width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
-                    paddingTop: 10
-                }} >
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Best Selling</Text>
-                    <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
-                </View>
-                <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation} />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation} />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation}/>
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation}/>
-                    </View>
-                </ScrollView>
-                <View style={{
-                    width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
-                    paddingTop: 10
-                }} >
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Groceries</Text>
-                    <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
-                </View>
-                <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                <View style={{ paddingHorizontal: 10 }}>
-                    <CardSec />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                    <CardSec />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                    <CardSec />
-                    </View>
-                </ScrollView>
-                <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation}/>
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card   navigation={this.props.navigation}/>
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation} />
-                    </View>
-                    <View style={{ paddingHorizontal: 10 }}>
-                        <Card  navigation={this.props.navigation}/>
-                    </View>
-                </ScrollView>
+                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
-            </ScrollView>
-            <BottomNav navigation={this.props.navigation}/>
-        </View>
-    );
-}
+{/* 
+                        {this.state.food.map((item, index) =>
+
+                            <Card navigation={this.props.navigation} item={item} key={index} />
+
+                        )} */}
+
+                        {/* <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View> */}
+                    </ScrollView>
+                    <View style={{
+                        width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
+                        paddingTop: 10
+                    }} >
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Best Selling</Text>
+                        <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
+                    </View>
+                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                    </ScrollView>
+                    <View style={{
+                        width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
+                        paddingTop: 10
+                    }} >
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Groceries</Text>
+                        <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
+                    </View>
+                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <CardSec />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <CardSec />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <CardSec />
+                        </View>
+                    </ScrollView>
+                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Card navigation={this.props.navigation} />
+                        </View>
+                    </ScrollView>
+
+                </ScrollView>
+                <BottomNav navigation={this.props.navigation} />
+            </View>
+        );
+    }
 };
 
 const styles = StyleSheet.create({
@@ -143,6 +234,18 @@ const styles = StyleSheet.create({
 
 
 });
+const mapState = state => {
+    return {
+        // categories: state.appReducer.categories,
+        // items: state.appReducer.items,
+        items: state.appReducer.items,
+    }
+}
+const mapDispatch = dispatch => {
+    return {
+        _getCategories: () => dispatch(_getCategories()),
+        _getItems: () => dispatch(_getItems()),
+    }
+}
 
-
-export default Home;
+export default connect(mapDispatch, mapState)(Home);

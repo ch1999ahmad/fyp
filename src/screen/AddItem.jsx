@@ -19,14 +19,14 @@ class AddItem extends React.Component {
         return (
             <View style={styles.container}>
                 {/* <View style={{ alignSelf: 'flex-end', justifyContent: 'flex-end' }}> */}
-                <Carousal active='#000' inActive='#D9D9D9' height={300} images={[require('../../assets/kella.png'), require('../../assets/kella.png'), require('../../assets/kella.png')]} />
+                <Carousal active='#000' inActive='#D9D9D9' height={300} images={this.props.route.params.item.image} />
                 {/* </View> */}
                 <View style={{ paddingHorizontal: 20, flex: 1, justifyContent: 'space-evenly' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-                        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Naturel red apple</Text>
+                        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Name:{this.props.route.params.item.name}</Text>
                         <AddToFavorite />
                     </View>
-                    <Text style={{ color: '#7C7C7C' }}>1kg,Price</Text>
+                    <Text style={{ color: '#7C7C7C' }}>Price:{this.props.route.params.item.price}</Text>
 
                     <Counter />
 
@@ -46,8 +46,8 @@ class AddItem extends React.Component {
 
 
                     <View style={{ borderBottomWidth: 1, borderColor: "#E2E2E2", borderTopWidth: 1, }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', paddingTop: 8, }}>Product Detail</Text>
-                        <Text style={{ color: '#7C7C7C', paddingBottom: 8 }}>Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', paddingTop: 8, }}>Product Detail:</Text>
+                        <Text style={{ color: '#7C7C7C', paddingBottom: 8 }}>{this.props.route.params.description}</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
                         <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Nutritious</Text>

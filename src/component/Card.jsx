@@ -6,9 +6,9 @@ import { Entypo } from '@expo/vector-icons';
 const Card=(props)=>{
     return(
         <View style={{ marginVertical: 10, width: 150, borderWidth:1 ,borderColor:'#ACC39E',borderRadius:6 }}>
-        <TouchableOpacity onPress={()=> props.navigation.navigate('AddItem')}>
+        <TouchableOpacity onPress={()=> props.navigation.navigate('AddItem' , {item: item})}>
         <Image style={{ resizeMode: 'contain', width: '100%',marginVertical:10 }}
-            source={require('../../assets/kella.png')} />
+            source={{uri: item.image[0]? item.image[0].toString():'no'}} />
         <Text style={{ fontSize: 14, fontWeight: 'bold', paddingLeft:10 }}>Organic bananas</Text>
         <Text style={{ fontWeight: 'bold',paddingLeft:10}}>6pcs,Price</Text>
         </TouchableOpacity>

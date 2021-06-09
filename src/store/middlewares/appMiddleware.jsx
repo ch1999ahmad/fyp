@@ -1,5 +1,5 @@
-import api from '../../api/api';
-import path from '../../api/path';
+import api from '../../api/Api';
+import path from '../../api/Path';
 // import { setError, setLoading } from '../actions/globalActions'
 import { set_items,  set_featured, set_user,set_categories  } from '../actions/appAction'
 
