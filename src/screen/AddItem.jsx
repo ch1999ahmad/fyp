@@ -10,7 +10,11 @@ import Counter from '../component/Counter';
 
 
 class AddItem extends React.Component {
-    render(props) {
+    componentDidMount() {
+        // console.log(this.props.route.params);
+        this.setState({ Matchcode: this.props.route.params.itemId })
+    }
+    render() {
 
 
         // const AddItem = ({ navigation }) => {
@@ -23,10 +27,10 @@ class AddItem extends React.Component {
                 {/* </View> */}
                 <View style={{ paddingHorizontal: 20, flex: 1, justifyContent: 'space-evenly' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
-                        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Name:{this.props.route.params.item.name}</Text>
+                        <Text style={{ fontSize: 22, fontWeight: 'bold' }}> Name: {this.props.route.params.item.name}</Text>
                         <AddToFavorite />
                     </View>
-                    <Text style={{ color: '#7C7C7C' }}>Price:{this.props.route.params.item.price}</Text>
+                    <Text style={{ color: '#7C7C7C' }}>1kg,Price: {this.props.route.params.item.price}</Text>
 
                     <Counter />
 
@@ -47,7 +51,7 @@ class AddItem extends React.Component {
 
                     <View style={{ borderBottomWidth: 1, borderColor: "#E2E2E2", borderTopWidth: 1, }}>
                         <Text style={{ fontSize: 18, fontWeight: 'bold', paddingTop: 8, }}>Product Detail:</Text>
-                        <Text style={{ color: '#7C7C7C', paddingBottom: 8 }}>{this.props.route.params.description}</Text>
+                        <Text style={{ color: '#7C7C7C', paddingBottom: 8 }}>{this.props.route.params.item.description}</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
                         <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Nutritious</Text>

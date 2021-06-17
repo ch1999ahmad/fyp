@@ -11,87 +11,101 @@ import { _getCategories, _getItems } from '../store/middlewares/appMiddleware';
 import kella from '../../assets/kella.png'
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            food: [
-                {
-                    name: 'banana',
-                    price: "99$ ",
-                    desription: '',
-                    image: [
-                        kella, kella, kella
-                    ]
-                },
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         food: [
+    //             {
+    //                 name: 'banana',
+    //                 price: "99$ ",
+    //                 desription: '',
+    //                 image: [
+    //                     kella, kella, kella
+    //                 ]
+    //             },
 
-                {
-                    name: 'banana',
-                    price: "99$ ",
-                    desription: '',
-                    image: [
-                        kella, kella, kella
-                    ]
-                },
+    //             {
+    //                 name: 'banana',
+    //                 price: "99$ ",
+    //                 desription: '',
+    //                 image: [
+    //                     kella, kella, kella
+    //                 ]
+    //             },
 
-                {
-                    name: 'banana',
-                    price: "99$ ",
-                    desription: '',
-                    image: [
-                        kella, kella, kella
-                    ]
-                },
+    //             {
+    //                 name: 'banana',
+    //                 price: "99$ ",
+    //                 desription: '',
+    //                 image: [
+    //                     kella, kella, kella
+    //                 ]
+    //             },
 
-                {
-                    name: 'banana',
-                    price: "99$ ",
-                    desription: '',
-                    image: [
-                        kella, kella, kella
-                    ]
-                },
+    //             {
+    //                 name: 'banana',
+    //                 price: "99$ ",
+    //                 desription: '',
+    //                 image: [
+    //                     kella, kella, kella
+    //                 ]
+    //             },
 
-            ],
+    //         ],
 
-            fruits: [
-                {
-                    name: 'banana',
-                    price: '99$',
-                    image: [kella]
-                }
-            ]
+    //         fruits: [
+    //             {
+    //                 name: 'banana',
+    //                 price: '99$',
+    //                 image: [kella]
+    //             }
+    //         ]
 
-        }
+    //     }
 
-    }
-
-
+    // }
 
 
-    async componentDidMount() {
-        let res = await this.props._getCategories()
-    }
-    getcategorie = async (e) => {
-        e.preventDefault()
-        // this.props.setLoading(true)
-        let res = await this.props._getCategories({})
 
-    }
 
+    // async componentDidMount() {
+    //     let res = await this.props._getCategories()
+    // }
+    // getcategorie = async (e) => {
+    //     e.preventDefault()
+    //     // this.props.setLoading(true)---------
+    //     let res = await this.props._getCategories({})
+
+    // }
+
+    // async componentDidMount() {
+    //     let res = await this.props._getItems()
+    //   }
+    //   getitem = async (e) => {
+    //     e.preventDefault()
+    //     // this.props.setLoading(true)
+    //     let res = await this.props._getItems({
+    
+    //     })
+    
+    //     // this.props.setLoading(false)--------
+    //   }
     async componentDidMount() {
         let res = await this.props._getItems()
-    }
-    getitem = async (e) => {
+      }
+      getitem = async (e) => {
         e.preventDefault()
-        //  this.props.setLoading(true)
-        let res = await this.props._getItems({})
+        // this.props.setLoading(true)
+        let res = await this.props._getItems({
+    
+        })
     }
 
 
 
 
-
-    render() {
+    render(props) {
+    // console.log(this.props.items)
     console.log(this.props.items)
 
         // const Home = (props) => {
@@ -128,13 +142,30 @@ class Home extends React.Component {
                     </View>
                     <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
-{/* 
-                        {this.state.food.map((item, index) =>
+
+                        {/* {this.state.food.map((item, index) =>
 
                             <Card navigation={this.props.navigation} item={item} key={index} />
 
                         )} */}
 
+                        {
+                           this.props.items.map((item, index) => 
+
+                           <Card navigation={this.props.navigation} item={item} key={index}    />
+                           
+                           )
+                       }
+                        
+                    </ScrollView>
+                    <View style={{
+                        width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
+                        paddingTop: 10
+                    }} >
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Best Selling</Text>
+                        <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
+                    </View>
+                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                         {/* <View style={{ paddingHorizontal: 10 }}>
                             <Card navigation={this.props.navigation} />
                         </View>
@@ -152,32 +183,11 @@ class Home extends React.Component {
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
                         paddingTop: 10
                     }} >
-                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Best Selling</Text>
-                        <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
-                    </View>
-                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                    </ScrollView>
-                    <View style={{
-                        width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
-                        paddingTop: 10
-                    }} >
                         <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Groceries</Text>
                         <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                     </View>
                     <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={{ paddingHorizontal: 10 }}>
+                        {/* <View style={{ paddingHorizontal: 10 }}>
                             <CardSec />
                         </View>
                         <View style={{ paddingHorizontal: 10 }}>
@@ -185,10 +195,10 @@ class Home extends React.Component {
                         </View>
                         <View style={{ paddingHorizontal: 10 }}>
                             <CardSec />
-                        </View>
+                        </View> */}
                     </ScrollView>
                     <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={{ paddingHorizontal: 10 }}>
+                        {/* <View style={{ paddingHorizontal: 10 }}>
                             <Card navigation={this.props.navigation} />
                         </View>
                         <View style={{ paddingHorizontal: 10 }}>
@@ -199,7 +209,7 @@ class Home extends React.Component {
                         </View>
                         <View style={{ paddingHorizontal: 10 }}>
                             <Card navigation={this.props.navigation} />
-                        </View>
+                        </View> */}
                     </ScrollView>
 
                 </ScrollView>
@@ -234,18 +244,37 @@ const styles = StyleSheet.create({
 
 
 });
+// const mapState = state => {
+//     return {
+//         // categories: state.appReducer.categories,
+//         // items: state.appReducer.items,
+//         items: state.appReducer.items,
+//     }
+// }
+// const mapDispatch = dispatch => {
+//     return {
+//         _getCategories: () => dispatch(_getCategories()),
+//         _getItem: () => dispatch(_getItems()),
+//     }
+// }
+
+// export default connect(mapState, mapDispatch)
 const mapState = state => {
     return {
-        // categories: state.appReducer.categories,
+        // logged: state.authReducer.logged,
         // items: state.appReducer.items,
+        categories: state.appReducer.categories,
         items: state.appReducer.items,
-    }
-}
-const mapDispatch = dispatch => {
-    return {
-        _getCategories: () => dispatch(_getCategories()),
-        _getItems: () => dispatch(_getItems()),
-    }
-}
 
-export default connect(mapDispatch, mapState)(Home);
+    }
+}
+const mapDispatch = dispatch =>{
+    return{
+        // _getItem: () => dispatch(_getItems()),
+        // setLoading: (bol) => dispatch(_setLoading(bol)),
+        _getCategories: () => dispatch(_getCategories()),
+        _getItems: () => dispatch(_getItems())
+
+    }
+}
+export default connect(mapState,mapDispatch)(Home)

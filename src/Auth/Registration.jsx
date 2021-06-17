@@ -86,7 +86,7 @@ class Registration extends React.Component {
 
     render() {
 
-
+     
         // const Registration = ({ navigation }) => {
         return (
 
@@ -94,6 +94,7 @@ class Registration extends React.Component {
                 <ScrollView contentContainerStyle={{ minHeight: Dimensions.get('window').height, justifyContent: 'space-evenly' }} showsVerticalScrollIndicator={false}>
 
                     <View >
+
 
                         <Image source={require('../../assets/logo.webp')}
                             style={{ width: height_logo, height: height_logo, alignSelf: 'center', }}
@@ -142,11 +143,12 @@ class Registration extends React.Component {
 
                         <Text style={{ fontSize: 15, color: 'black', fontWeight: 'bold' }}>City</Text>
                         <TextInput
-                            onChangeText={(city) => { this.setState({ city }) }}
-                            placeholder="City"
+                         placeholder="City"
                             style={styles.textinput}
                             keyboardType={'email-address'}
-                            autoCapitalize='none' />
+                            onChangeText={(city) => { this.setState({ city }) }}
+                           
+                             />
 
                         <Text style={{ fontSize: 15, color: 'black', paddingTop: 10, fontWeight: 'bold' }}>Password</Text>
                         <TextInput
