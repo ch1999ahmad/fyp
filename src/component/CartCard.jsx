@@ -5,20 +5,20 @@ import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Counter from "../component/Counter";
 
-const CartCard = () => {
+const CartCard = ({item}) => {
     return (
         <View style={{flexDirection:'row',justifyContent:"space-between",borderBottomWidth:1,borderColor:'#E2E2E2',paddingBottom:10,paddingTop:10}}>
                 <View style={{ marginVertical: 10, }}>
                     <Image 
-                     source={require('../../assets/bell.png')} />
+                     source={{ uri: item.image[0] }} />
                 </View>
                 <View>
 
-                    <Text style={{ fontSize: 18,fontWeight:"bold",}}>Bell Pepper Red</Text>
+                    <Text style={{ fontSize: 18,fontWeight:"bold",}}>{item.name}</Text>
                     <Text style={{}}>1kg, Price</Text>
                     
                     <View style={{}}>
-                    <Counter/>
+                    <Counter product={item}/>
                     </View>
                     {/* <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <TouchableOpacity style={{ paddingRight: 9, }}><Entypo name="minus" size={24} color="black" /></TouchableOpacity>
@@ -32,7 +32,7 @@ const CartCard = () => {
                 <View  style={{justifyContent:'space-around',}}>
                 <TouchableOpacity><Ionicons style={{alignSelf:'flex-end'}}
                      name="ios-close-outline" size={24} color="black" /></TouchableOpacity> 
-                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>$4.99</Text>
+                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>{item.price}</Text>
                 </View>
 
             </View>

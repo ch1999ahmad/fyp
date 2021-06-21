@@ -4,11 +4,27 @@ import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import CheckCard from '../component/CheckCard';
 import { Octicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 
 
 class CheckOut extends React.Component{
+
+    getTotal = () => {
+        let total = 0
+        let products = this.props.products;
+        products.forEach(item => {
+            total = total + item.price * item.quantity
+        })
+        return total
+
+    }
+
+
     render(props){
 
+
+        
+        
 // const CheckOut = (props) => {
     return (
         <View style={styles.container}>
@@ -25,9 +41,11 @@ class CheckOut extends React.Component{
             <View style={{ borderTopWidth: 1, borderColor: "#E2E2E2", width: '100%', }}>
                 <Text style={{ fontSize: 17, fontWeight: "bold", }}>Your Products</Text>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexGrow: 0 }} >
-                    <View style={{ padding: 20, paddingLeft: 0 }}><CheckCard /></View>
-                    <View style={{ padding: 20 }}><CheckCard /></View>
-                    <View style={{ padding: 20 }}><CheckCard /></View>
+                {
+                        this.props.products.map((item, index) =>
+                            <View key={index} style={{ padding: 20 }}><CheckCard item={item} /></View>
+                        )
+                    }
 
                     
                 </ScrollView>
@@ -55,7 +73,7 @@ class CheckOut extends React.Component{
             </View>
             <View style={{ flexDirection: "row", justifyContent: "space-between", borderTopWidth: 1, borderColor: "#E2E2E2" }}>
                 <Text>Total</Text>
-                <Text>$1200</Text>
+                <Text>{this.getTotal()}</Text>
             </View>
             <View style={{}}>
                     <TouchableOpacity  onPress={() => this.props.navigation.navigate('Successful')}
@@ -78,4 +96,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
 })
-export default CheckOut;
+// export default CheckOut;
+const mapState = state => {
+    return {
+        products: state.cartReducer.products,
+
+    }
+}
+
+export default connect(mapState,)(CheckOut)

@@ -8,10 +8,24 @@ import BottomNav from '../component/BottomNav';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 
 
 class MyCart extends React.Component{
-    render(props){
+
+
+
+    getTotal = () => {
+        let total = 0
+        let products = this.props.products;
+        products.forEach(item => {
+            total = total + item.price *item.quantity
+        })
+        return total
+
+    }
+
+    render(){
 
 // const MyCart = (props) => {
     return (
@@ -23,9 +37,21 @@ class MyCart extends React.Component{
                 }}>My Cart</Text>
             </View>
             <ScrollView  showsVerticalScrollIndicator={false} >
-                <CartCard />
-                <CartCard />
-                <CartCard />
+          
+              {
+                  this.props.products.map((item,index)=>
+                 <CartCard  item={item} key={index} />   
+                     )
+              }
+     
+            <View >
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
+                        <Text>Total:</Text>
+                        <Text>{this.getTotal()}</Text>
+                    </View>
+
+                </View>
+                
                 
             </ScrollView>
                    <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:100,}}>
@@ -48,4 +74,11 @@ const styles = StyleSheet.create({
     },
 })
 
-export default MyCart;
+const mapState = state => {
+    return {
+        products: state.cartReducer.products,
+
+    }
+}
+
+export default connect(mapState,)(MyCart)

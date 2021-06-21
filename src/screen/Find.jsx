@@ -27,17 +27,18 @@ class Find extends React.Component{
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
                     <CardThrd Image={require('../../assets/Vgetble.png')} text="Frash Fruits & Vegetable" color='#B7DFF5' Rcolor='#B7DFF5'/>
                     <CardThrd Image={require('../../assets/Vgetble.png')} text={"Cooking Oil \n & Ghee"} color='#F8A44C' Rcolor='#f8a44c'  />
+
+                </View>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal:20 }}>
+                    <CardThrd Image={require('../../assets/meat.png')} text={"Meat & \n Fish"} color='#F7A593' Rcolor='#F7A593'/>
+                    <CardThrd Image={require('../../assets/bread.png')} text={"Bakery & \n Snacks"} color='#D3B0E0' Rcolor='#D3B0E0'/>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
-                    <CardThrd />
-                    <CardThrd />
+                    <CardThrd Image={require('../../assets/dhood.png')} text={"Dairy & Eggs"} color='#FDE598' Rcolor='#FDE598'/>
+                    <CardThrd Image={require('../../assets/drink.png')} text={"Beverages"} color='#53B175' Rcolor='#53B175' />
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
-                    <CardThrd />
-                    <CardThrd />
-                </View>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20 }}>
-                    <CardThrd />
+                    {/* <CardThrd Image={require('../../assets/crockty.png')} text={"Crockry Items"} color='#53B175' Rcolor='#53B175'/> */}
                     <CardThrd />
                 </View>
 

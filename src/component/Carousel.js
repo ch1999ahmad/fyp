@@ -35,8 +35,10 @@ export const Carousal = ({ images, width, height, active, inActive ,props }) => 
             duration: 0.5,
             useNativeDriver: false
         }).start()
+
     }
 
+    
 
     return (
         
@@ -51,7 +53,7 @@ export const Carousal = ({ images, width, height, active, inActive ,props }) => 
             >
                 {
                     images.map((img, index) =>
-                        <Image key={index}  resizeMode='stretch' source={img} style={{ width: totalWidth,height:'100%' }}  />
+                        <Image key={index}  resizeMode='stretch' source={{uri:String(img)}} style={{ width: totalWidth,height:'100%' }}  />
                     )
                 }
 

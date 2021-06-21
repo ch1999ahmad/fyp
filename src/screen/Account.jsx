@@ -7,6 +7,8 @@ import { EvilIcons } from '@expo/vector-icons';
 import BottomNav from '../component/BottomNav';
 import { _login } from '../store/middlewares/authMiddleware';
 import { connect } from 'react-redux';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { logout } from '../store/actions/authActions';
 
 //import { Link } from '@react-navigation/native';
 // import { Entypo } from '@expo/vector-icons';
@@ -102,9 +104,9 @@ class Account extends React.Component {
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity style={{ flexDirection: 'row' }}>
-                        <Ionicons name="settings" size={18} color="#7C7C7C" />
-                        <Text style={{ color: "#7C7C7C", paddingLeft: 10,textAlignVertical:"center" }}>Settings</Text>
+                    <TouchableOpacity onPress ={() => this.props.logout()} style={{ flexDirection: 'row' }}>
+                    <MaterialCommunityIcons name="logout" size={20} color="#7C7C7C" />
+                        <Text style={{ color: "#7C7C7C", paddingLeft: 10,textAlignVertical:"center" }}>Logout</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -134,8 +136,9 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
     return {
-        _login: (param) => dispatch(_login(param)),
-        setLoading: (bol) => dispatch(set_loading(bol)),
+        logout:() =>dispatch(logout())
+        // _login: (param) => dispatch(_login(param)),
+        // setLoading: (bol) => dispatch(set_loading(bol)),
     }
 }
 export default connect(mapState, mapDispatch)(Account);

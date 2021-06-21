@@ -35,3 +35,10 @@ export const set_lang = (payload) => (
         payload
     }
 )
+
+export const deleteitem = (info) => (
+    {
+        type: DELETE,
+        info: info
+    }
+)
