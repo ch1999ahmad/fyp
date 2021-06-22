@@ -8,10 +8,10 @@ import Counter from "../component/Counter";
 const CartCard = ({item}) => {
     return (
         <View style={{flexDirection:'row',justifyContent:"space-between",borderBottomWidth:1,borderColor:'#E2E2E2',paddingBottom:10,paddingTop:10}}>
-                <View style={{ marginVertical: 10, }}>
-                    <Image 
+                {/* <View style={{ marginVertical: 10, }}> */}
+                    <Image style={{width:"25%",height:60}}
                      source={{ uri: item.image[0] }} />
-                </View>
+                {/* </View> */}
                 <View>
 
                     <Text style={{ fontSize: 18,fontWeight:"bold",}}>{item.name}</Text>
@@ -32,7 +32,7 @@ const CartCard = ({item}) => {
                 <View  style={{justifyContent:'space-around',}}>
                 <TouchableOpacity><Ionicons style={{alignSelf:'flex-end'}}
                      name="ios-close-outline" size={24} color="black" /></TouchableOpacity> 
-                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>{item.price}</Text>
+                    <Text style={{ fontSize: 26, fontWeight: 'bold', }}>{item.price}</Text>
                 </View>
 
             </View>

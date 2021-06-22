@@ -46,8 +46,8 @@ class MyCart extends React.Component{
      
             <View >
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 20 }}>
-                        <Text>Total:</Text>
-                        <Text>{this.getTotal()}</Text>
+                        <Text style={{fontSize:26}}>Total:</Text>
+                        <Text style={{fontSize:26, fontWeight:'bold'}}>{this.getTotal()}</Text>
                     </View>
 
                 </View>
