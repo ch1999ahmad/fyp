@@ -178,13 +178,13 @@ class Home extends React.Component {
                         <View style={{ paddingHorizontal: 10 }}>
                             <Card navigation={this.props.navigation} />
                         </View> */}
-                        {/* {
+                        {
                            this.props.items.map((item, index) => 
 
                            <Card navigation={this.props.navigation} item={item} key={index}    />
                            
                            )
-                       } */}
+                       }
                     </ScrollView>
                     <View style={{
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',

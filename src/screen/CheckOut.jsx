@@ -5,7 +5,9 @@ import { Entypo } from '@expo/vector-icons';
 import CheckCard from '../component/CheckCard';
 import { Octicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
-
+import { removeCart } from '../store/actions/cartAction';
+import Path from '../api/Path';
+import api from '../api/Api'
 
 class CheckOut extends React.Component{
 
@@ -18,7 +20,27 @@ class CheckOut extends React.Component{
         return total
 
     }
-
+    CheckOut = async()=> {
+        let param={
+            "orderNo":Math.round(Math.random()+1000),
+        
+            "price":this.getTotal(),
+           "user":this.props.user._id,
+            "items":this.props.products.map(p=>p._id),
+            "status":"PENDING",
+           "orderDate":new Date().toISOString()
+        
+        
+        }
+                 let response = await api(Path.addorder, "POST", param)
+             if(response.success){
+        this.props.navigation.navigate('Successful')
+             }
+             else {
+                 alert(response.message)
+             }
+                 
+                }
 
     render(props){
 
@@ -76,7 +98,7 @@ class CheckOut extends React.Component{
                 <Text>{this.getTotal()}</Text>
             </View>
             <View style={{}}>
-                    <TouchableOpacity  onPress={() => this.props.navigation.navigate('Successful')}
+                    <TouchableOpacity  onPress={() => this.CheckOut()}
                     style={{backgroundColor:"#59C32F",width:'70%',alignSelf:"center"
                     ,height:50,justifyContent:"center",borderRadius:13,}}>
                         <Text style={{fontSize:17,textAlign:"center",color:'#fff'}}>Place Order</Text>
@@ -100,8 +122,15 @@ const styles = StyleSheet.create({
 const mapState = state => {
     return {
         products: state.cartReducer.products,
+        user: state.authReducer.user
 
     }
 }
-
-export default connect(mapState,)(CheckOut)
+const mapDispatch = dispatch => {
+    return {
+      removeCart: () => dispatch(removeCart()),
+    
+   
+    }
+  }
+export default connect(mapState,mapDispatch)(CheckOut)

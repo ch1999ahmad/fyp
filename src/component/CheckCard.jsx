@@ -7,7 +7,7 @@ export default ({ item }) => {
     return (
         <View style={{ flexDirection: 'row', backgroundColor: '#F3F4F3', width: 250, height: 80, alignItems: 'center', borderRadius: 13 }}>
 
-            <Image style={{ width: "43%", height: 60 }}
+            <Image style={{ width: "43%", height: 65, }}
                 source={{ uri: item.image[0] }} />
 
             <View >
