@@ -135,19 +135,22 @@ class Home extends React.Component {
 
                     <View style={{
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
-                        paddingTop: 10
-                    }} >
-                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Exclusive Offer</Text>
-                        <TouchableOpacity ><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
-                    </View>
-                    <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        paddingTop: 10,}} >
 
+                        <Text style={{ fontSize: 25, fontWeight: 'bold',textAlignVertical:"top",paddingHorizontal:10 }}>Best Selling</Text>
+                        
+                    </View>
+                    
+                    <View style={{ flexDirection: 'row', flexWrap: "wrap", justifyContent: "space-between",paddingHorizontal:20 }}>
+                   
+                    
 
                         {/* {this.state.food.map((item, index) =>
 
                             <Card navigation={this.props.navigation} item={item} key={index} />
 
                         )} */}
+                        
 
                         {
                            this.props.items.map((item, index) => 
@@ -157,7 +160,7 @@ class Home extends React.Component {
                            )
                        }
                         
-                    </ScrollView>
+                    </View>
                     <View style={{
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
                         paddingTop: 10

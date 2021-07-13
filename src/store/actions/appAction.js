@@ -12,12 +12,12 @@ export const set_items = (payload) => (
         payload
     }
 )
-// export const set_favourite = (payload) => (
-//     {
-//         type: SET_FAVOURITE,
-//         payload
-//     }
-// )
+export const set_favourite = (payload) => (
+    {
+        type: SET_FAVOURITE,
+        payload
+    }
+)
 export const set_user = (payload) => (
     {
         type: SET_USERS,

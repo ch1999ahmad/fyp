@@ -15,16 +15,16 @@ export const _getItems = () => {
         }
     }
 }
-export const _getFeatured = () => {
+// export const _getFeatured = () => {
 
-    return async (dispatch, getState) => {
+//     return async (dispatch, getState) => {
 
-        let res = await api.getFeatured();
-        if (res) {
-            dispatch(set_featured(res.result))
-        }
-    }
-}
+//         let res = await api.getFeatured();
+//         if (res) {
+//             dispatch(set_featured(res.result))
+//         }
+//     }
+// }
 export const _getCategories = () => {
 
     return async (dispatch, getState) => {

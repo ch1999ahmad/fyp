@@ -20,14 +20,14 @@ const BottomNav = (props) => {
                 <View style={{ flexDirection: 'row', }}>
                     <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
                         <Entypo style={{alignSelf:"center"}} name="shop" size={24} color="black" />
-                        <Text style={{ alignItems: 'center', color: 'black', }}>Shop</Text>
+                        <Text style={{ alignItems: 'center', color: 'black', }}>Home</Text>
 
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity onPress={() => props.navigation.navigate('Find')} >
                     <AntDesign style={{alignSelf:"center"}} 
                     name="search1" size={24} color="black" />
-                    <Text style={{ alignItems: 'center', color: 'black', }}>Explore</Text>
+                    <Text style={{ alignItems: 'center', color: 'black', }}>Categories</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => props.navigation.navigate('MyCart')}>
                     <MaterialCommunityIcons style={{alignSelf:"center"}}

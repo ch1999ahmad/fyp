@@ -9,7 +9,7 @@ const CartCard = ({item}) => {
     return (
         <View style={{flexDirection:'row',justifyContent:"space-between",borderBottomWidth:1,borderColor:'#E2E2E2',paddingBottom:10,paddingTop:10}}>
                 {/* <View style={{ marginVertical: 10, }}> */}
-                    <Image style={{width:"25%",height:60}}
+                    <Image style={{width:"25%",height:65}}
                      source={{ uri: item.image[0] }} />
                 {/* </View> */}
                 <View>

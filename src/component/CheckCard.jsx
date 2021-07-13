@@ -5,9 +5,9 @@ import { View, StyleSheet, Text, TextInput, Image, ScrollView, TouchableOpacity 
 
 export default ({ item }) => {
     return (
-        <View style={{ flexDirection: 'row', backgroundColor: '#F3F4F3', width: 250, height: 80, alignItems: 'center', borderRadius: 13 }}>
+        <View style={{ flexDirection: 'row', backgroundColor: '#F3F4F3', width: 250, height: 86, alignItems: 'center', borderRadius: 13 }}>
 
-            <Image style={{ width: "43%", height: 65, }}
+            <Image style={{ width: "43%", height: 67, }}
                 source={{ uri: item.image[0] }} />
 
             <View >
