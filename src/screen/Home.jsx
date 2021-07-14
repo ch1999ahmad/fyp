@@ -166,7 +166,7 @@ class Home extends React.Component {
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',
                         paddingTop: 10
                     }} >
-                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Best Selling</Text>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}> Exclusive Offer</Text>
                         <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                     </View>
                     <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -224,7 +224,7 @@ class Home extends React.Component {
                     </ScrollView>
 
                 </ScrollView>
-                <BottomNav navigation={this.props.navigation} />
+               <BottomNav navigation={this.props.navigation} />
             </View>
         );
     }

@@ -1,7 +1,7 @@
 import api from '../../api/Api';
 import path from '../../api/Path';
 // import { setError, setLoading } from '../actions/globalActions'
-import { set_items,  set_featured, set_user,set_categories  } from '../actions/appAction'
+import { set_items,  set_featured, set_user,set_categories , } from '../actions/appAction'
 
 
 export const _getItems = () => {
@@ -48,16 +48,16 @@ export const _deleteItems = () => {
         }
     }
 }
-// export const _getFavourite = (token, uid) => {
+export const _getFavourite = (token, uid) => {
 
-//     return async (dispatch, getState) => {
+    return async (dispatch, getState) => {
 
-//         let res = await api.getFavourite(token, uid);
-//         if (res) {
-//             dispatch(set_favourite(res.result))
-//         }
-//     }
-// }
+        let res = await api.getFavourite(token, uid);
+        if (res) {
+            dispatch(set_favourite(res.result))
+        }
+    }
+}
 
 export const _getUsers = (token) => {
 

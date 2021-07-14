@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
+import AddToFavorite from './AddToFavorite';
 
 // export default({item,navigation,style}) =>{
 
@@ -19,7 +20,9 @@ import { Entypo } from '@expo/vector-icons';
             <View>
                 <Text>{item.price}</Text>    
             </View>
-            
+            <View style={{paddingLeft:60}}>
+            <AddToFavorite  />
+            </View>
             <View style={{backgroundColor:'#59C32F',borderRadius:15}}>
             {/* <TouchableOpacity onPress={() => props.navigation.navigate('MyCart')}>
                 <Entypo name="plus" size={35} color="black" />
