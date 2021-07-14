@@ -69,7 +69,7 @@ class Find extends React.Component{
                     </ScrollView>  
                     
            <View>
-               <Text>Related Products</Text>
+               <Text style={{fontSize:18,fontWeight:"bold",paddingHorizontal:10}}>Related Products</Text>
            </View>
 
                   

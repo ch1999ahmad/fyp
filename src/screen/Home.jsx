@@ -128,8 +128,9 @@ class Home extends React.Component {
                 </View>
                 <ScrollView>
                     <View style={{ alignSelf: 'center', justifyContent: 'center', paddingTop: 10 }}>
-                        <Carousal active='#000' inActive='#D9D9D9' height={100} images={[require('../../assets/home.jpeg'), require('../../assets/home.jpeg'), require('../../assets/home.jpeg')]} />
-
+                        {/* <Carousal active='#000' inActive='#D9D9D9' height={100} images={[require('../../assets/home.jpeg'), require('../../assets/home.jpeg'), require('../../assets/home.jpeg')]} /> */}
+                        <Image
+                        source={require('../../assets/home.jpeg')} />
 
                     </View>
 
