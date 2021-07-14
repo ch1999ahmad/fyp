@@ -6,10 +6,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import FavCard from "../component/FavCard";
 import BottomNav from '../component/BottomNav';
+import { connect } from 'react-redux';
 
 class Favourite extends React.Component{
-    render(props){
-
+    render(){
+        console.log(JSON.stringify(this.props.fav))
 // const Favourite =(props)=>{
     return(
         <View style={styles.container}>
@@ -20,14 +21,15 @@ class Favourite extends React.Component{
                     justifyContent: 'center', paddingTop: 40, paddingBottom: 9,
                 }}>Favourite</Text>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false}>
-           <FavCard/>
-           <FavCard/>
-           <FavCard/>
-           <FavCard/>
-           <FavCard/>
-           <FavCard/>
-           </ScrollView>
+            <ScrollView  showsHorizontalScrollIndicator={false} >
+                    <View style={{ flexDirection: 'row', flexWrap: "wrap", justifyContent: "space-between", paddingHorizontal:20 }}>
+                        {/* {
+                            this.props.fav.map((item, index) =>
+                                <Card key={index} navigation={this.props.navigation} item={item} />
+                            )
+                        } */}
+                    </View>
+                </ScrollView>
            <View style={{ position: 'absolute', zIndex: 10, alignSelf: 'center', bottom:100,}}>
                 <TouchableOpacity  onPress={() => this.props.navigation.navigate('MyCart')}
                 style={{backgroundColor:"#59C32F",width:'160%',alignSelf:"center"
@@ -50,4 +52,11 @@ const styles = StyleSheet.create({
 });
 
 
-export default Favourite;
+const mapState = state => ({
+    fav: state.appReducer.favourites
+})
+const mapDispatch = dispatch => ({
+    // fav: state.appReducer.favourites
+})
+
+export default connect(mapState, mapDispatch)(Favourite)

@@ -145,21 +145,16 @@ class Home extends React.Component {
                     <View style={{ flexDirection: 'row', flexWrap: "wrap", justifyContent: "space-between",paddingHorizontal:20 }}>
                    
                     
-
-                        {/* {this.state.food.map((item, index) =>
-
-                            <Card navigation={this.props.navigation} item={item} key={index} />
-
-                        )} */}
+ 
                         
 
-                        {
+                         {
                            this.props.items.map((item, index) => 
 
                            <Card navigation={this.props.navigation} item={item} key={index}    />
                            
                            )
-                       }
+                       } 
                         
                     </View>
                     <View style={{
@@ -170,25 +165,14 @@ class Home extends React.Component {
                         <TouchableOpacity><Text style={{ color: '#59C32F', fontSize: 15 }}>See all</Text></TouchableOpacity>
                     </View>
                     <ScrollView style={{ flexGrow: 0 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                        {/* <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View>
-                        <View style={{ paddingHorizontal: 10 }}>
-                            <Card navigation={this.props.navigation} />
-                        </View> */}
-                        {
+                        
+                        {/* {
                            this.props.items.map((item, index) => 
 
                            <Card navigation={this.props.navigation} item={item} key={index}    />
                            
                            )
-                       }
+                       } */}
                     </ScrollView>
                     <View style={{
                         width: '90%', flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center',

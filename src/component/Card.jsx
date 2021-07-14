@@ -21,7 +21,7 @@ import AddToFavorite from './AddToFavorite';
                 <Text>{item.price}</Text>    
             </View>
             <View style={{paddingLeft:60}}>
-            <AddToFavorite  />
+            <AddToFavorite item={item} />
             </View>
             <View style={{backgroundColor:'#59C32F',borderRadius:15}}>
             {/* <TouchableOpacity onPress={() => props.navigation.navigate('MyCart')}>
