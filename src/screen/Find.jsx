@@ -56,7 +56,7 @@ class Find extends React.Component{
             {
                       this.props.categories &&
                       this.props.categories.map((cat,index)=>
-                      <TouchableOpacity onPress={()=> this.setState({active:cat.name})} key={index} style={{ padding:10,marginTop:20,borderColor:'#ACC39E',borderWidth:1,borderRadius:15,margin:10}}><Text style={{  fontSize: 15, }} >
+                      <TouchableOpacity onPress={()=> this.setState({active:cat.name})} key={index} style={{ padding:10,marginTop:20,marginBottom:30,borderColor:'#ACC39E',borderWidth:1,borderRadius:15,margin:10,backgroundColor:'#FCFFFC'}}><Text style={{  fontSize: 15, }} >
                       {cat.name}
                   </Text></TouchableOpacity> )
                   }
@@ -69,10 +69,10 @@ class Find extends React.Component{
                     </ScrollView>  
                     
            <View>
-               <Text style={{fontSize:18,fontWeight:"bold",paddingHorizontal:10}}>Related Products</Text>
+               <Text style={{fontSize:18,fontWeight:"bold",paddingHorizontal:10,marginBottom:10}}>Related Products</Text>
            </View>
 
-                  
+                  <ScrollView>
 
                    <View style={{ flexDirection: 'row', flexWrap: "wrap", justifyContent: "space-between",paddingHorizontal:10 }}>
                         {
@@ -86,7 +86,7 @@ class Find extends React.Component{
 
                     </View>
 
-
+</ScrollView>
             
             <BottomNav navigation={this.props.navigation} />
         </View>

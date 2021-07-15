@@ -30,9 +30,9 @@ class AddItem extends React.Component {
                 <View style={{ paddingHorizontal: 20, flex: 1, justifyContent: 'space-evenly' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
                         <Text style={{ fontSize: 22, fontWeight: 'bold' }}> Name: {product.name}</Text>
-                        <AddToFavorite product={product} />
+                        {/* <AddToFavorite product={product} /> */}
                     </View>
-                    <Text style={{ color: '#7C7C7C' }}>1kg,Price: {product.price}</Text>
+                    <Text style={{ color: '#7C7C7C' }}>Price: {product.price}</Text>
 
                     <Counter product={product} />
 

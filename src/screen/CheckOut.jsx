@@ -25,7 +25,7 @@ class CheckOut extends React.Component{
             "orderNo":Math.round(Math.random()+1000),
         
             "price":this.getTotal(),
-           "user":this.props.user._id,
+           "user":this.props.user.  _id,
             "items":this.props.products.map(p=>p._id),
             "status":"PENDING",
            "orderDate":new Date().toISOString()

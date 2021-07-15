@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage:AsyncStorage,
-    blacklist: ['globalReducer','authReducer']
+    blacklist: ['globalReducer','authReducer','appReducer']
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

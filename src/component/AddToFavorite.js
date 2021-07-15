@@ -54,7 +54,7 @@ class AddToFavorite extends React.Component {
 
             {
                 this.state.heart === true ?
-                    <FontAwesome name="heart" size={25} color="black" />
+                    <FontAwesome name="heart" size={25} color="red" />
                     :
                     <FontAwesome name="heart-o" size={25} color="black" />
 
